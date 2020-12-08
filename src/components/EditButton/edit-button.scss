@@ -1,0 +1,17 @@
+@import './__button-icon/edit-button__icon.scss';
+
+.edit-button {
+    width: 40px;
+    opacity: .2;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: 0 0 1em 0;
+}
+
+.edit-button_active {
+    opacity: 1;
+}

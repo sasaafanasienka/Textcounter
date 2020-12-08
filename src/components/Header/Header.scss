@@ -1,0 +1,12 @@
+@import './__logo/header__logo.scss';
+
+.header {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.6em 1.2em;
+
+    border-bottom: .1px solid lightGrey;
+
+    align-items: center;
+}

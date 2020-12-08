@@ -1,0 +1,9 @@
+@import './__input/text__input.scss';
+
+.text {
+    grid-area: text;
+
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
