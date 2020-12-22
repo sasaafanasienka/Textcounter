@@ -12,11 +12,17 @@ class ToolBar extends React.Component {
 
         super(props);
         this.state = {};
-        this.statCount = this.statCount.bind(this); //это требуется чтобы не потерять котекст в statcount
+        this.onChangeText = this.onChangeText.bind(this); //это требуется чтобы не потерять котекст в onChangeText
+        this.onChangeInRecycle = this.onChangeInRecycle.bind(this); //это требуется чтобы не потерять котекст в onChangeText
     }
 
-    statCount() {
+    onChangeText() {
         this.props.onChangeText(document.querySelector('.text__input').value); //эта строка отправляет данные поля ввода в пропсы maincontent
+    }
+
+    onChangeInRecycle() {
+        console.log('toolbar on change in recycle')
+        this.props.onChangeInRecycle(); //эта строка отправляет данные поля ввода в пропсы maincontent
     }
 
     render() {
@@ -35,9 +41,9 @@ class ToolBar extends React.Component {
         
         return(
             <div className='toolbar'>
-                <EditButton type='delete' isActive={isTextAreaHasContent} onChangeText={this.statCount}/>
-                <EditButton type='copy' isActive={isTextAreaHasContent} onChangeText={this.statCount}/>
-                <EditButton type='paste' isActive={isClibBoardHasContent} onChangeText={this.statCount}/>
+                <EditButton type='delete' isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle}/>
+                <EditButton type='copy' isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/>
+                <EditButton type='paste' isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/>
                 <PopupMessage />
             </div>
         )

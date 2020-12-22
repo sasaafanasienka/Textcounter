@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import deleteIcon from '../../images/delete_icon.svg'
 import copyIcon from '../../images/copy_icon.svg'
 import pasteIcon from '../../images/paste_icon.svg'
-import { showPopupMessage } from '../../js/utilits'
-
+import { makeItemForRecycle, showPopupMessage } from '../../js/utilits'
+import LocalStorage from '../../js/localStorage'
 import './edit-button.scss'
+
+const newLocalStorage = new LocalStorage();
 
 class EditButton extends React.Component {
 
@@ -13,9 +15,9 @@ class EditButton extends React.Component {
 
         super(props);
 
-        this.clearTextArea = this.clearTextArea.bind(this); //это требуется чтобы не потерять котекст в statcount
-        this.pasteInTextArea = this.pasteInTextArea.bind(this); //это требуется чтобы не потерять котекст в statcount
-        this.copyTextArea = this.copyTextArea.bind(this); //это требуется чтобы не потерять котекст в statcount
+        this.clearTextArea = this.clearTextArea.bind(this); //это требуется чтобы не потерять котекст
+        this.pasteInTextArea = this.pasteInTextArea.bind(this); //это требуется чтобы не потерять котекст
+        this.copyTextArea = this.copyTextArea.bind(this); //это требуется чтобы не потерять котекст
     
         this.state = {
             'delete' : {icon: deleteIcon, action: this.clearTextArea},
@@ -25,8 +27,12 @@ class EditButton extends React.Component {
     }
 
     clearTextArea() {
+        let textAreaContent = document.querySelector('.text__input').value
+        let dataForRecycle = makeItemForRecycle(textAreaContent)
+        newLocalStorage.addTo('recycle', dataForRecycle)
         document.querySelector('.text__input').value = ''
         this.props.onChangeText();
+        this.props.onChangeInRecycle();
     }
 
     copyTextArea(event) {

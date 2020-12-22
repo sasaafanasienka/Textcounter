@@ -15,9 +15,9 @@ class Stat extends React.Component {
         }
     }
 
-    statCount(valueOfTextAtea) {
-        this.setState ({text: valueOfTextAtea})
-    }
+    // statCount(valueOfTextAtea) {
+    //     this.setState ({text: valueOfTextAtea})
+    // }
 
     symbolsCount() {
         const text = this.props.text
@@ -45,12 +45,7 @@ class Stat extends React.Component {
 
         return(
             <div className='stat'>
-                <p className='stat__title'>Знаков:</p>
-                <p className='stat__number'>{this.symbolsCount()}</p>
-                <p className='stat__title'>Слов:</p>
-                <p className='stat__number'>{this.wordsCount().length}</p>
-                <p className='stat__title'>Абзацев:</p>
-                <p className='stat__number'>{this.paragraphsCount()}</p>
+                <p className='stat__number'>{this.symbolsCount()} знаков / {this.wordsCount().length} слов / {this.paragraphsCount()} абзацев</p>
             </div>
         )
     }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Api } from '../../js/api';
 import { alphabet } from '../../js/constants';
 import { showPopupMessage } from '../../js/utilits'
+import fishicon from '../../images/fish.svg'
 const api = (template) => new Api(template);
 
 
@@ -11,11 +12,14 @@ class TextGenerator extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {}
+        this.state = {
+            popupWasShown: false
+        }
 
         this.statCount = this.statCount.bind(this); //это требуется чтобы не потерять котекст в statcount
         this.textGen = this.textGen.bind(this); //это требуется чтобы не потерять котекст в statcount
         this.editText = this.editText.bind(this); //это требуется чтобы не потерять котекст в statcount
+        this.showPopup = this.showPopup.bind(this); //это требуется чтобы не потерять котекст в statcount
     }
 
     statCount() {
@@ -40,9 +44,23 @@ class TextGenerator extends React.Component {
             })
     }
 
+    showPopup(event) {
+        showPopupMessage(event.clientX, event.clientY, 'генерировать рыбный текст', 'black')
+        this.setState({popupWasShown: true})
+        setTimeout(() => {
+            this.setState({popupWasShown: false})
+        }, 60000)
+    }
+
     render() {
+        let showPopupFunc = this.showPopup
+        if (this.state.popupWasShown === true) {
+            showPopupFunc = null;
+        }
         return(
-                <button onClick={this.textGen} className='button'>Генерировать рыбу</button>
+                <button onClick={this.textGen} onMouseEnter={showPopupFunc} className='button text-generator'>
+                    <img className='button__icon' src={fishicon} alt='fish icon'></img>
+                </button>
         )
     }
 }

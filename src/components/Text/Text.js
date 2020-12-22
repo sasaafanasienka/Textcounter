@@ -10,11 +10,21 @@ class Text extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            timerId: 0
+        }
+
         this.statCount = this.statCount.bind(this); //это требуется чтобы не потерять котекст в statcount
     }
 
     statCount() {
-        this.props.onChangeText(document.querySelector('.text__input').value); //эта строка отправляет данные поля ввода в пропсы maincontent
+        clearTimeout(this.state.timerId)
+        document.querySelector('.stat__number').style.opacity = '0.3'
+        const timerId = setTimeout(() => {
+            this.props.onChangeText(document.querySelector('.text__input').value)
+            document.querySelector('.stat__number').style.opacity = '1'
+        }, 500)
+        this.setState({timerId: timerId})    
     }
 
     render() {

@@ -1,0 +1,15 @@
+@import './__button/recycle-item__button.scss';
+@import './__title/recycle-item__title.scss';
+@import './__subtitle/recycle-item__subtitle.scss';
+
+.recycle-item {
+    display: flex;
+
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0 0 15px 0;
+}
+
+.recycle-item:first-of-type {
+    margin-top: 15px;
+}

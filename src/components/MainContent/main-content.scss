@@ -1,16 +1,14 @@
-.main-content {
-    padding: 1.2em 1.2em 6em 1.2em;
-    box-sizing: border-box;
+@import './__toolbar/main-content__toolbar.scss';
+@import './__logo/main-content__logo.scss';
 
-    display: grid;
-    grid-template-columns: 20fr 1fr 6fr;
-    grid-template-rows: 0.05fr 0.1fr 0.1fr;
-    gap: 13px 13px;
-    grid-template-areas:
-      "text toolbar text_generator"
-      "text toolbar stat"
-      "text toolbar recycle_bin";
-    }
+.main-content {
+    position: relative;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    margin: 120px 120px;
+    box-sizing: border-box;
+}
 
 .text_generator { grid-area: text_generator; }
-.recycle_bin { grid-area: recycle_bin; }

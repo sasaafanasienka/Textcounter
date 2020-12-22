@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom';
 // import copyIcon from '../../images/copy_icon.svg'
 // import pasteIcon from '../../images/paste_icon.svg'
 // import { showPopupMessage } from '../../js/utilits'
-
+import LocalStorage from '../../js/localStorage'
 import './mode-switch.scss'
+
+const newLocalStorage = new LocalStorage();
 
 class ModeSwitch extends React.Component {
 
@@ -18,18 +20,21 @@ class ModeSwitch extends React.Component {
         this.switchDayNightMode = this.switchDayNightMode.bind(this); //это требуется чтобы не потерять котекст в statcount
     
         this.state = {
-            mode: 'day'
+            mode: localStorage.mode
         };
     }
 
     switchDayNightMode() {
         if (this.state.mode === 'day') {
+            newLocalStorage.setDayNightMode('night')
             console.log('night mode switched')
+            document.querySelector('.header').style.background = 'black'
             this.setState({
                 mode: 'night'
             })
         } else {
             console.log('day mode switched')
+            document.querySelector('.header').style.background = 'white'
             this.setState({
                 mode: 'day'
             })
