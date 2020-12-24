@@ -1,9 +1,6 @@
 .text__input {
     width: 100%;
-    min-height: 700px;
-    height: auto;
-    // height: 100px;
-
+    height: calc(100vh - 200px);
     box-sizing: border-box;
     background-color: #EEEEEE;
     border: 1px solid #DDDDDD;

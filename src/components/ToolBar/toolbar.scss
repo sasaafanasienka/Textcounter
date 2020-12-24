@@ -1,8 +1,15 @@
 .toolbar {
-    position: absolute;
-    top: 0;
-    right: -50px;
+    position: fixed;
+    top: 120px;
+    right: 70px;
 
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 1023px) {
+    .toolbar {
+        top: 110px;
+        right: 10px
+     }
 }
