@@ -9,6 +9,7 @@ import headerLogo from '../../images/logo.svg';
 import RecycleButton from '../RecycleButton/RecycleButton';
 import RecycleBin from '../RecycleBin/RecycleBin';
 import LocalStorage from '../../js/localStorage';
+import Footer from '../Footer/Footer'
 
 const newLocalStorage = new LocalStorage()
 
@@ -60,6 +61,7 @@ class MainContent extends React.Component {
                 <RecycleBin itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle}/>
                 <Text onChangeText={this.onChangeText} text={this.state.text}/>
                 <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text}/>
+                <Footer />
             </div>
         )
     }

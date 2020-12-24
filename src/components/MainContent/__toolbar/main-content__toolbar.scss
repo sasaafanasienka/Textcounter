@@ -12,7 +12,7 @@
     flex-wrap: nowrap;
     box-sizing: border-box;
     width: 100%;
-    padding: 1em 120px;
+    padding: 10px 120px;
 
     background-color: rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid $borderColor;
@@ -21,4 +21,16 @@
     justify-content: space-between;
 
     z-index: 10000;
+}
+
+@media (max-width: 1023px) {
+    .main-content__toolbar {
+        padding: 10px 60px;
+    }
+}
+
+@media (max-width: 567px) {
+    .main-content__toolbar {
+        padding: 10px 20px;
+    }
 }

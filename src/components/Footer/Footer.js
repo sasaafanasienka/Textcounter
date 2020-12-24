@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.scss';
-import belarusFlag from '../../images/belarus_flag.svg'
 import facebookLogo from '../../images/logo_fb.svg'
 import githubLogo from '../../images/logo_github.svg'
 import linkedinLogo from '../../images/logo_linkedin.svg'
@@ -9,12 +8,8 @@ import telegramLogo from '../../images/logo_telegram.svg'
 function Footer() {
   return (
     <div className="footer">
-      <div className='footer__copyright'>
-        <img className='footer__logo' src={belarusFlag} alt='belarusian flag'></img>
-        <p className='footer__text'>Александр Афанасенко, 2020</p>
-      </div>
+      <p className='footer__text'>Александр Афанасенко, 2020</p>
       <div className='footer__social-links'>
-        <p className='footer__text'>Написать автору:</p>
         <a className='footer__icon-link' href="https://www.facebook.com/sasaafanasienka">
             <img src={facebookLogo} alt="Facebook logo" />
         </a>

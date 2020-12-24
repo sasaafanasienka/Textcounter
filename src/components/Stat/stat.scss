@@ -11,8 +11,9 @@
     box-sizing: border-box;
 
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 
     margin: 0 auto 0 0
 }

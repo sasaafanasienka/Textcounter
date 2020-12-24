@@ -5,17 +5,27 @@
 @import './__icon-link/footer__icon-link.scss';
 
 .footer {
-    position: fixed;
     width: 100%;
     bottom: 0;
     background-color: white;
 
-    align-items: top;    // opacity: ;
+    align-items: top;
+    justify-content: space-between;
+
 
     display: flex;
-    justify-content: space-between;
     box-sizing: border-box;
-    padding: 1.2em 120px 0 120px;
 
-    border-top: .1px solid #DDDDDD;
+}
+
+// @media (max-width: 1023px) {
+//     .footer {
+//         padding: 1.2em 60px 0 60px;
+//         }
+// }
+
+@media (max-width: 567px) {
+    .footer {
+        flex-direction: column;
+    }
 }

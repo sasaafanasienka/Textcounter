@@ -1,4 +1,11 @@
 .main-content__logo {
-    width: 170px;
+    width: 100px;
     margin: 0 40px 0 0;
+}
+
+@media (max-width: 567px) {
+    .main-content__logo {
+        width: 60px;
+        margin: 0 15px 0 0;
+    }
 }

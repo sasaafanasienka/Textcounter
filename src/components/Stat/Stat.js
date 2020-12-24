@@ -45,7 +45,9 @@ class Stat extends React.Component {
 
         return(
             <div className='stat'>
-                <p className='stat__number'>{this.symbolsCount()} знаков / {this.wordsCount().length} слов / {this.paragraphsCount()} абзацев</p>
+                <p className='stat__number'>{this.symbolsCount()} знаков</p>
+                <p className='stat__number'>{this.wordsCount().length} слов</p>
+                <p className='stat__number'>{this.paragraphsCount()} абзацев</p>
             </div>
         )
     }

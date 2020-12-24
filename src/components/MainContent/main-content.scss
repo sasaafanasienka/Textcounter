@@ -5,10 +5,20 @@
     position: relative;
 
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
 
     margin: 120px 120px;
     box-sizing: border-box;
 }
 
-.text_generator { grid-area: text_generator; }
+@media (max-width: 1023px) {
+    .main-content {
+        margin: 120px 60px
+    }
+}
+
+@media (max-width: 567px) {
+    .main-content {
+        margin: 110px 60px 120px 20px
+     }
+}
