@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './recycle-button.scss'
 import LocalStorage from '../../js/localStorage'
 import RecoverButton from '../RecycleItem/RecycleItem';
 
 import recycleicon from '../../images/recycle.svg'
 import RecycleBin from '../RecycleBin/RecycleBin';
+
+import Button from '../Button/Button'
 
 const newLocalStorage = new LocalStorage();
 
@@ -26,12 +27,15 @@ class RecycleButton extends React.Component {
     }
 
     render() {
-            return(
-                <button className='recycle-button' onClick={this.showRecycleBin}>
-                    <img className='button__icon' src={recycleicon} alt='recycle icon'></img>
-                    <div className='recycle-button__items-counter'>{Object.keys(this.props.itemsInRecycle).length}</div>
-                </button>
-            )
+        return(
+            <Button 
+            type='main' 
+            color='black' 
+            onClick={this.showRecycleBin} 
+            icon={recycleicon} 
+            alt='recycle bin button'
+            counter={Object.keys(this.props.itemsInRecycle).length}
+        />)
     }
 }
 

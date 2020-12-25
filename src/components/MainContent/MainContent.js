@@ -46,7 +46,6 @@ class MainContent extends React.Component {
 
     render() {
 
-        console.log('MainContent render')
         console.log(`В корзине ${Object.keys(this.state.recycle).length} объектов`)
         const recycleContent = this.state.recycle
 

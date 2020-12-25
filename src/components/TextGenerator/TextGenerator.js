@@ -4,6 +4,7 @@ import { Api } from '../../js/api';
 import { alphabet } from '../../js/constants';
 import { showPopupMessage } from '../../js/utilits'
 import fishicon from '../../images/fish.svg'
+import Button from '../Button/Button'
 const api = (template) => new Api(template);
 
 
@@ -57,10 +58,17 @@ class TextGenerator extends React.Component {
         if (this.state.popupWasShown === true) {
             showPopupFunc = null;
         }
+        
         return(
-                <button onClick={this.textGen} onMouseEnter={showPopupFunc} className='button text-generator'>
-                    <img className='button__icon' src={fishicon} alt='fish icon'></img>
-                </button>
+            <Button 
+                type='main' 
+                color='red' 
+                onClick={this.textGen} 
+                icon={fishicon} 
+                alt='fish text button'
+                counter=''
+            />
+
         )
     }
 }
