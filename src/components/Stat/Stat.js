@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './stat.scss'
 import '../../styles/main.scss'
-import { alphabet } from '../../js/constants'
-import TextGenerator from '../TextGenerator/TextGenerator'
+import { rightWord } from '../../js/utilits/rightWord'
 
 class Stat extends React.Component {
 
@@ -14,10 +13,6 @@ class Stat extends React.Component {
             text: ''
         }
     }
-
-    // statCount(valueOfTextAtea) {
-    //     this.setState ({text: valueOfTextAtea})
-    // }
 
     symbolsCount() {
         const text = this.props.text
@@ -30,7 +25,7 @@ class Stat extends React.Component {
         const words = text.split(' ').filter((item) => { //split делает массив из строк разделенных ' '
             return item !== ''  //filter создает новый массив убирая из старого пустые строки
         })
-        return words      
+        return words.length      
     }
 
     paragraphsCount() {
@@ -42,12 +37,11 @@ class Stat extends React.Component {
     }
 
     render() {
-
         return(
             <div className='stat'>
-                <p className='stat__number'>{this.symbolsCount()} знаков</p>
-                <p className='stat__number'>{this.wordsCount().length} слов</p>
-                <p className='stat__number'>{this.paragraphsCount()} абзацев</p>
+                <p className='stat__number'>{rightWord(this.symbolsCount(), 'знак')}</p>
+                <p className='stat__number'>{rightWord(this.wordsCount(), 'слово')}</p>
+                <p className='stat__number'>{rightWord(this.paragraphsCount(), 'абзац')}</p>
             </div>
         )
     }
