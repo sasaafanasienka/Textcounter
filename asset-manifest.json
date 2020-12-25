@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Textcounter/static/css/main.7e16c4f3.chunk.css",
-    "main.js": "/Textcounter/static/js/main.2e18efa0.chunk.js",
-    "main.js.map": "/Textcounter/static/js/main.2e18efa0.chunk.js.map",
+    "main.css": "/Textcounter/static/css/main.a595bd8f.chunk.css",
+    "main.js": "/Textcounter/static/js/main.13840e0c.chunk.js",
+    "main.js.map": "/Textcounter/static/js/main.13840e0c.chunk.js.map",
     "runtime-main.js": "/Textcounter/static/js/runtime-main.02aa9cfc.js",
     "runtime-main.js.map": "/Textcounter/static/js/runtime-main.02aa9cfc.js.map",
     "static/js/2.80e23f4d.chunk.js": "/Textcounter/static/js/2.80e23f4d.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.226ce1c7.chunk.js": "/Textcounter/static/js/3.226ce1c7.chunk.js",
     "static/js/3.226ce1c7.chunk.js.map": "/Textcounter/static/js/3.226ce1c7.chunk.js.map",
     "index.html": "/Textcounter/index.html",
-    "static/css/main.7e16c4f3.chunk.css.map": "/Textcounter/static/css/main.7e16c4f3.chunk.css.map",
+    "static/css/main.a595bd8f.chunk.css.map": "/Textcounter/static/css/main.a595bd8f.chunk.css.map",
     "static/js/2.80e23f4d.chunk.js.LICENSE.txt": "/Textcounter/static/js/2.80e23f4d.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Textcounter/static/media/Gilroy-Thin.4b118de0.woff",
     "static/media/copy_icon.e7765d1b.svg": "/Textcounter/static/media/copy_icon.e7765d1b.svg",
     "static/media/delete_icon.bce6056c.svg": "/Textcounter/static/media/delete_icon.bce6056c.svg",
     "static/media/fish.51d9f3be.svg": "/Textcounter/static/media/fish.51d9f3be.svg",
-    "static/media/logo.4bebe4f2.svg": "/Textcounter/static/media/logo.4bebe4f2.svg",
+    "static/media/logo.4a5d448b.svg": "/Textcounter/static/media/logo.4a5d448b.svg",
     "static/media/logo_fb.903c5c0f.svg": "/Textcounter/static/media/logo_fb.903c5c0f.svg",
     "static/media/logo_github.e72b7d98.svg": "/Textcounter/static/media/logo_github.e72b7d98.svg",
     "static/media/logo_linkedin.fddf28f9.svg": "/Textcounter/static/media/logo_linkedin.fddf28f9.svg",
@@ -27,7 +27,7 @@
   "entrypoints": [
     "static/js/runtime-main.02aa9cfc.js",
     "static/js/2.80e23f4d.chunk.js",
-    "static/css/main.7e16c4f3.chunk.css",
-    "static/js/main.2e18efa0.chunk.js"
+    "static/css/main.a595bd8f.chunk.css",
+    "static/js/main.13840e0c.chunk.js"
   ]
 }
