@@ -66,7 +66,6 @@ class TextGenerator extends React.Component {
                 onClick={this.textGen} 
                 icon={fishicon} 
                 alt='fish text button'
-                counter=''
             />
 
         )

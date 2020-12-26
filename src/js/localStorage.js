@@ -33,8 +33,6 @@ export class LocalStorage {
 
     loadTo(property, content) {
         localStorage.setItem(property, JSON.stringify(content));
-        console.log(`${property} changed`)
-        console.log(JSON.parse(localStorage[property]))
     }
 
     loadFrom(property) {

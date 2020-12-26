@@ -4,6 +4,8 @@ import './recycle-bin.scss'
 import LocalStorage from '../../js/localStorage'
 // import RecycleClearButton from '../RecycleClearButton/RecycleClearButton';
 import RecycleItem from '../RecycleItem/RecycleItem';
+import Button from '../Button/Button'
+import fishicon from '../../images/fish.svg'
 
 const newLocalStorage = new LocalStorage();
 
@@ -22,6 +24,7 @@ class RecycleBin extends React.Component {
         this.renderAllItems = this.renderAllItems.bind(this)
         this.renderItem = this.renderItem.bind(this)
         this.refresh = this.refresh.bind(this)
+        this.clearAll = this.clearAll.bind(this)
     }
 
     refresh() {
@@ -57,6 +60,16 @@ class RecycleBin extends React.Component {
         this.setState({timerId: timerId})
     }
 
+    renderClearAllButton() {
+        return (Object.keys(this.props.itemsInRecycle).length !== 0 ?
+        <Button type='text' color='red' onClick={this.clearAll} text='очистить корзину' alt='fish text button'/> : null)
+    }
+
+    clearAll() {
+        newLocalStorage.loadTo('recycle', {})
+        this.refresh()
+    }
+
     render() {
         let title = 'корзина'
         if (Object.keys(this.props.itemsInRecycle).length === 0) {
@@ -67,6 +80,7 @@ class RecycleBin extends React.Component {
             <div className='recycle-bin' onMouseLeave={this.closeAfterMouseLeaving} onMouseEnter={this.stopClosing}>
                 <p className='recycle-bin__title'>{title}</p>
                 {this.renderAllItems()}
+                {this.renderClearAllButton()}
             </div>
         )
     }

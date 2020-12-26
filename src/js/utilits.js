@@ -35,8 +35,8 @@ export function makeItemForRecycle(deletedText) {
     const currentMinutes = current.getMinutes();
     const currentMiliSeconds = Date.parse(current);
     let textTitle = '';
-    if (deletedText.length > 15) {
-        textTitle = deletedText.slice(0, 15).concat('...')
+    if (deletedText.length > 18) {
+        textTitle = deletedText.slice(0, 18).concat('...')
     } else {
         textTitle = deletedText
     }

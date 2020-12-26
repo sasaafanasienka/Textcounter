@@ -19,10 +19,10 @@ class Text extends React.Component {
 
     statCount() {
         clearTimeout(this.state.timerId)
-        document.querySelector('.stat__number').style.opacity = '0.3'
+        document.querySelector('.stat').style.opacity = '0.3'
         const timerId = setTimeout(() => {
             this.props.onChangeText(document.querySelector('.text__input').value)
-            document.querySelector('.stat__number').style.opacity = '1'
+            document.querySelector('.stat').style.opacity = '1'
         }, 500)
         this.setState({timerId: timerId})    
     }
