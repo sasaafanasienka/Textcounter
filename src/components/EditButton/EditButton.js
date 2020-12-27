@@ -45,7 +45,7 @@ class EditButton extends React.Component {
         navigator.clipboard.readText()
         .then(text => {
             document.querySelector('.text__input').value = text
-            this.props.onChangeText(text);
+            this.props.onChangeText();
         }).then(() => {
             if (document.querySelector('.text__input').value.length === 0) {
                 showPopupMessage(event.clientX, event.clientY, 'ошибка, возможно в буфере находится не текст', 'red')

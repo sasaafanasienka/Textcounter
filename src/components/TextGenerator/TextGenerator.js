@@ -17,14 +17,14 @@ class TextGenerator extends React.Component {
             popupWasShown: false
         }
 
-        this.statCount = this.statCount.bind(this); //это требуется чтобы не потерять котекст в statcount
-        this.textGen = this.textGen.bind(this); //это требуется чтобы не потерять котекст в statcount
-        this.editText = this.editText.bind(this); //это требуется чтобы не потерять котекст в statcount
-        this.showPopup = this.showPopup.bind(this); //это требуется чтобы не потерять котекст в statcount
+        this.statCount = this.statCount.bind(this); //это требуется чтобы не потерять котекст
+        this.textGen = this.textGen.bind(this); //это требуется чтобы не потерять котекст
+        this.editText = this.editText.bind(this); //это требуется чтобы не потерять котекст
+        this.showPopup = this.showPopup.bind(this); //это требуется чтобы не потерять котекст
     }
 
     statCount() {
-        this.props.onChangeText(document.querySelector('.text__input').value); //эта строка отправляет данные поля ввода в пропсы maincontent
+        this.props.onChangeText();
     }
 
     editText(text) {

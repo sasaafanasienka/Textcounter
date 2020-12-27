@@ -31,7 +31,8 @@ class MainContent extends React.Component {
         };
       }
 
-    onChangeText(valueOfTextArea) {
+    onChangeText() {
+        let valueOfTextArea = document.querySelector('.text__input').value
         this.setState({
             text: valueOfTextArea
         })
@@ -57,7 +58,7 @@ class MainContent extends React.Component {
                     <TextGenerator onChangeText={this.onChangeText}/>
                     <RecycleButton itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle}/>
                 </div>
-                <RecycleBin itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle}/>
+                <RecycleBin itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle} onChangeText={this.onChangeText}/>
                 <Text onChangeText={this.onChangeText} text={this.state.text}/>
                 <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text}/>
                 <Footer />

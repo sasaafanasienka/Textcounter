@@ -19,12 +19,17 @@ class RecycleBin extends React.Component {
 
         this.renderAllItems = this.renderAllItems.bind(this)
         this.renderItem = this.renderItem.bind(this)
-        this.refresh = this.refresh.bind(this)
+        this.refreshRecycle = this.refreshRecycle.bind(this)
+        this.refreshStat = this.refreshStat.bind(this)
         this.clearAll = this.clearAll.bind(this)
     }
 
-    refresh() {
+    refreshRecycle() {
         this.props.onChangeInRecycle();
+    }
+
+    refreshStat() {
+        this.props.onChangeText();
     }
 
     renderAllItems() {
@@ -39,7 +44,7 @@ class RecycleBin extends React.Component {
 
     renderItem(key, title, time, length) {
         return (
-            <RecycleItem keyProp={key} title={title} time={time} length={length} onChangeInRecycle={this.refresh}/>
+            <RecycleItem keyProp={key} title={title} time={time} length={length} onChangeInRecycle={this.refreshRecycle} onChangeText={this.refreshStat}/>
         )
     }
 
@@ -50,7 +55,7 @@ class RecycleBin extends React.Component {
 
     clearAll() {
         newLocalStorage.loadTo('recycle', {})
-        this.refresh()
+        this.refreshRecycle()
     }
 
     render() {

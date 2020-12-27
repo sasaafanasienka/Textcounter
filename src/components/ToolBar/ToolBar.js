@@ -17,7 +17,7 @@ class ToolBar extends React.Component {
     }
 
     onChangeText() {
-        this.props.onChangeText(document.querySelector('.text__input').value); //эта строка отправляет данные поля ввода в пропсы maincontent
+        this.props.onChangeText(); //эта строка отправляет данные поля ввода в пропсы maincontent
     }
 
     onChangeInRecycle() {

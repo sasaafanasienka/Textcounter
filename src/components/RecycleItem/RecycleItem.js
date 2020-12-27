@@ -19,18 +19,18 @@ class RecycleItem extends React.Component {
         }
 
         this.recover = this.recover.bind(this)
-        this.refresh = this.refresh.bind(this)
+        this.refreshStat = this.refreshStat.bind(this)
     }
 
-    refresh() {
-        this.props.onChangeInRecycle();
+    refreshStat() {
+        this.props.onChangeText();
     }
 
     recover() {
         console.log(1)
         const recycle = JSON.parse(localStorage.recycle)
         document.querySelector('.text__input').value = recycle[this.state.key].text
-        this.refresh();
+        this.refreshStat();
     }
 
     render() {
