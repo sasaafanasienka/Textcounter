@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Textcounter/static/css/main.301b480a.chunk.css",
-    "main.js": "/Textcounter/static/js/main.d62605d4.chunk.js",
-    "main.js.map": "/Textcounter/static/js/main.d62605d4.chunk.js.map",
-    "runtime-main.js": "/Textcounter/static/js/runtime-main.505c3126.js",
-    "runtime-main.js.map": "/Textcounter/static/js/runtime-main.505c3126.js.map",
-    "static/js/2.80e23f4d.chunk.js": "/Textcounter/static/js/2.80e23f4d.chunk.js",
-    "static/js/2.80e23f4d.chunk.js.map": "/Textcounter/static/js/2.80e23f4d.chunk.js.map",
-    "static/js/3.35013459.chunk.js": "/Textcounter/static/js/3.35013459.chunk.js",
-    "static/js/3.35013459.chunk.js.map": "/Textcounter/static/js/3.35013459.chunk.js.map",
+    "main.js": "/Textcounter/static/js/main.653d2cfd.chunk.js",
+    "main.js.map": "/Textcounter/static/js/main.653d2cfd.chunk.js.map",
+    "runtime-main.js": "/Textcounter/static/js/runtime-main.4cbcbf5d.js",
+    "runtime-main.js.map": "/Textcounter/static/js/runtime-main.4cbcbf5d.js.map",
+    "static/js/2.aae72ca7.chunk.js": "/Textcounter/static/js/2.aae72ca7.chunk.js",
+    "static/js/2.aae72ca7.chunk.js.map": "/Textcounter/static/js/2.aae72ca7.chunk.js.map",
+    "static/js/3.50ff1964.chunk.js": "/Textcounter/static/js/3.50ff1964.chunk.js",
+    "static/js/3.50ff1964.chunk.js.map": "/Textcounter/static/js/3.50ff1964.chunk.js.map",
     "index.html": "/Textcounter/index.html",
     "static/css/main.301b480a.chunk.css.map": "/Textcounter/static/css/main.301b480a.chunk.css.map",
-    "static/js/2.80e23f4d.chunk.js.LICENSE.txt": "/Textcounter/static/js/2.80e23f4d.chunk.js.LICENSE.txt",
+    "static/js/2.aae72ca7.chunk.js.LICENSE.txt": "/Textcounter/static/js/2.aae72ca7.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Textcounter/static/media/Gilroy-Thin.4b118de0.woff",
     "static/media/close.f0e4eaf8.svg": "/Textcounter/static/media/close.f0e4eaf8.svg",
     "static/media/copy_icon.e7765d1b.svg": "/Textcounter/static/media/copy_icon.e7765d1b.svg",
@@ -26,9 +26,9 @@
     "static/media/recycle.e52d6c54.svg": "/Textcounter/static/media/recycle.e52d6c54.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.505c3126.js",
-    "static/js/2.80e23f4d.chunk.js",
+    "static/js/runtime-main.4cbcbf5d.js",
+    "static/js/2.aae72ca7.chunk.js",
     "static/css/main.301b480a.chunk.css",
-    "static/js/main.d62605d4.chunk.js"
+    "static/js/main.653d2cfd.chunk.js"
   ]
 }
