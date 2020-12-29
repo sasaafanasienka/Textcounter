@@ -33,7 +33,6 @@ export function makeItemForRecycle(deletedText) {
     const currentYear = current.getFullYear();
     const currentHours = current.getHours();
     const currentMinutes = current.getMinutes();
-    if (currentMinutes.length === 1) {currentMinutes = `0${currentMinutes}`}
     const currentMiliSeconds = Date.parse(current);
     let textTitle = '';
     if (deletedText.length > 18) {
