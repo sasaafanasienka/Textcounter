@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -26,15 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 src/images/Безымянный-1.ai
 src/images/logo.ai
-=======
-/node_modules
-/dist
-/images
-/.idea
-.DS_Store
-Thumbs.db
-*.idea
-*.sublime
-*.vscode
-*.log
->>>>>>> Stashed changes
+.eslintcache
+.eslintcache
