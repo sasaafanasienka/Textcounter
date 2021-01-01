@@ -5,6 +5,7 @@ import './toolbar.scss'
 import EditButton from '../ToolButton/ToolButton';
 import PopupMessage from '../PopupMessage/PopupMessage';
 import ToolPaste from '../ToolPaste/ToolPaste';
+import ToolCopy from '../ToolCopy/ToolCopy';
 
 
 class ToolBar extends React.Component {
@@ -42,6 +43,7 @@ class ToolBar extends React.Component {
         
         return(
             <div className='toolbar'>
+                <ToolCopy isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/>
                 <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/>
                 {/* <EditButton type='delete' isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle}/>
                 <EditButton type='copy' isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/>
