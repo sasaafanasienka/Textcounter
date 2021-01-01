@@ -12,14 +12,16 @@ class ToolClear extends React.Component {
     constructor(props) {
         super(props);
         this.clearTextArea = this.clearTextArea.bind(this); //это требуется чтобы не потерять котекст
+        this.makeItemForRecycle = this.makeItemForRecycle.bind(this); //это требуется чтобы не потерять котекст
+        this.createPopupContent = this.createPopupContent.bind(this); //это требуется чтобы не потерять котекст
         this.state = {};
     }
 
     clearTextArea() {
         if (Object.keys(newLocalStorage.loadFrom('recycle')).length >= 3) {
-            console.log('more tha 3')
-        } else {
-            console.log('sdfdasf')
+            document.querySelector('.popup').classList.add('popup_active')
+            this.props.onPopupInit(this.createPopupContent())
+            return
         }
         let textAreaContent = document.querySelector('.text__input').value
         let dataForRecycle = this.makeItemForRecycle(textAreaContent)
@@ -27,6 +29,17 @@ class ToolClear extends React.Component {
         document.querySelector('.text__input').value = ''
         this.props.onChangeText();
         this.props.onChangeInRecycle();
+    }
+
+    createPopupContent() {
+        let popupDOM = []
+        popupDOM.push(
+            <>
+                <p className='popup__text'>В корзине слишком много элементов</p>
+            </>
+        )
+        console.log(popupDOM)
+        return popupDOM
     }
 
     makeItemForRecycle(deletedText) {

@@ -17,6 +17,7 @@ class ToolBar extends React.Component {
         this.state = {};
         this.onChangeText = this.onChangeText.bind(this); //это требуется чтобы не потерять котекст в onChangeText
         this.onChangeInRecycle = this.onChangeInRecycle.bind(this); //это требуется чтобы не потерять котекст в onChangeText
+        this.onPopupInit = this.onPopupInit.bind(this); //это требуется чтобы не потерять котекст в onChangeText
     }
 
     onChangeText() {
@@ -26,6 +27,10 @@ class ToolBar extends React.Component {
     onChangeInRecycle() {
         console.log('toolbar on change in recycle')
         this.props.onChangeInRecycle(); //эта строка отправляет данные поля ввода в пропсы maincontent
+    }
+
+    onPopupInit(popupContent) {
+        this.props.onPopupInit(popupContent)
     }
 
     render() {
@@ -46,7 +51,7 @@ class ToolBar extends React.Component {
             <div className='toolbar'>
                 <ToolCopy isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/>
                 <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/>
-                <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle}/>
+                <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} onPopupInit={this.onPopupInit}/>
                 <PopupMessage />
             </div>
         )

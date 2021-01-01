@@ -1,4 +1,8 @@
+@import './__text/popup__text.scss';
+
 .popup {
+    display: none;
+    flex-direction: column;
     position: fixed;
     top: calc(50vh - 150px);
     left: calc(50vw - 150px);
@@ -14,4 +18,8 @@
     background-color: black;
 
     z-index: 10003;
+}
+
+.popup_active {
+    display: flex;
 }

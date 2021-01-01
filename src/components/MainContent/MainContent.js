@@ -21,6 +21,7 @@ class MainContent extends React.Component {
         
         this.onChangeText = this.onChangeText.bind(this);
         this.onChangeInRecycle = this.onChangeInRecycle.bind(this);
+        this.popupInit = this.popupInit.bind(this);
         
         if (localStorage.recycle === undefined) { //создаем корзину если она еще не создана
             newLocalStorage.loadTo('recycle', {}) 
@@ -35,7 +36,8 @@ class MainContent extends React.Component {
     onChangeText() {
         let valueOfTextArea = document.querySelector('.text__input').value
         this.setState({
-            text: valueOfTextArea
+            text: valueOfTextArea,
+            popupContentDOM: []
         })
     }
 
@@ -43,6 +45,13 @@ class MainContent extends React.Component {
         const newRecycleData = newLocalStorage.loadFrom('recycle');
         this.setState({
             recycle: newRecycleData
+        })
+    }
+
+    popupInit(popupContent) {
+        console.log(popupContent)
+        this.setState({
+            textOnPopup: popupContent
         })
     }
 
@@ -61,8 +70,8 @@ class MainContent extends React.Component {
                 </div>
                 <RecycleBin itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle} onChangeText={this.onChangeText}/>
                 <Text onChangeText={this.onChangeText} text={this.state.text}/>
-                <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text}/>
-                <Popup />
+                <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text} onPopupInit={this.popupInit}/>
+                <Popup text={this.state.textOnPopup}/>
                 <Footer />
             </div>
         )
