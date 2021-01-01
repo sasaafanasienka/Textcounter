@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './toolbar.scss'
-import EditButton from '../EditButton/EditButton';
+import EditButton from '../ToolButton/ToolButton';
 import PopupMessage from '../PopupMessage/PopupMessage';
+import ToolPaste from '../ToolPaste/ToolPaste';
 
 
 class ToolBar extends React.Component {
@@ -41,9 +42,10 @@ class ToolBar extends React.Component {
         
         return(
             <div className='toolbar'>
-                <EditButton type='delete' isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle}/>
+                <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/>
+                {/* <EditButton type='delete' isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle}/>
                 <EditButton type='copy' isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/>
-                <EditButton type='paste' isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/>
+                <EditButton type='paste' isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/> */}
                 <PopupMessage />
             </div>
         )

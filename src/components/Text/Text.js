@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './text.scss'
-import EditButton from '../EditButton/EditButton';
+import EditButton from '../ToolButton/ToolButton';
 import PopupMessage from '../PopupMessage/PopupMessage';
 
 class Text extends React.Component {
