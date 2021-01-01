@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import deleteIcon from '../../images/delete_icon.svg'
-import { showPopupMessage } from '../../js/utilits'
 import LocalStorage from '../../js/localStorage'
 import ToolButton from '../ToolButton/ToolButton';
 import { months } from '../../js/constants'
@@ -17,6 +16,11 @@ class ToolClear extends React.Component {
     }
 
     clearTextArea() {
+        if (Object.keys(newLocalStorage.loadFrom('recycle')).length >= 3) {
+            console.log('more tha 3')
+        } else {
+            console.log('sdfdasf')
+        }
         let textAreaContent = document.querySelector('.text__input').value
         let dataForRecycle = this.makeItemForRecycle(textAreaContent)
         newLocalStorage.addTo('recycle', dataForRecycle)

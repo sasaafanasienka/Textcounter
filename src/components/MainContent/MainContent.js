@@ -10,6 +10,7 @@ import RecycleButton from '../RecycleButton/RecycleButton';
 import RecycleBin from '../RecycleBin/RecycleBin';
 import LocalStorage from '../../js/localStorage';
 import Footer from '../Footer/Footer'
+import Popup from '../Popup/Popup';
 
 const newLocalStorage = new LocalStorage()
 
@@ -61,6 +62,7 @@ class MainContent extends React.Component {
                 <RecycleBin itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle} onChangeText={this.onChangeText}/>
                 <Text onChangeText={this.onChangeText} text={this.state.text}/>
                 <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text}/>
+                <Popup />
                 <Footer />
             </div>
         )
