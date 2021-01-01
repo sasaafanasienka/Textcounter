@@ -5,6 +5,7 @@ import LocalStorage from '../../js/localStorage'
 import RecycleItem from '../RecycleItem/RecycleItem';
 import Button from '../Button/Button'
 import ButtonClosePopup from '../ButtonClosePopup/ButtonClosePopup';
+import PopupTitle from '../PopupTitle/PopupTitle';
 
 const newLocalStorage = new LocalStorage();
 
@@ -66,7 +67,7 @@ class RecycleBin extends React.Component {
 
         return(
             <div className='recycle-bin' onMouseLeave={this.closeAfterMouseLeaving} onMouseEnter={this.stopClosing}>
-                <p className='recycle-bin__title'>{title}</p>
+                <PopupTitle title={title}/>
                 <ButtonClosePopup classToClose='recycle-bin'/>
                 {this.renderAllItems()}
                 {this.renderClearAllButton()}
