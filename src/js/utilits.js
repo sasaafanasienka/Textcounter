@@ -1,5 +1,3 @@
-import { months } from './constants'
-
 export function showPopupMessage(x, y, message, messageColor) {
     // console.log(window.innerWidth)
     // console.log(window.innerHeight)
@@ -24,28 +22,4 @@ export function showPopupMessage(x, y, message, messageColor) {
         popup.classList.add('popup-message_unactive');
         popup.classList.remove('popup-message_active');
     }, 3000)
-}
-
-export function makeItemForRecycle(deletedText) {
-    const current = new Date();
-    const currentDate = current.getDate();
-    const currentMonth = months[current.getMonth()];
-    const currentYear = current.getFullYear();
-    const currentHours = current.getHours();
-    const currentMinutes = current.getMinutes();
-    if (currentMinutes.length === 1) {currentMinutes = `0${currentMinutes}`}
-    const currentMiliSeconds = Date.parse(current);
-    let textTitle = '';
-    if (deletedText.length > 18) {
-        textTitle = deletedText.slice(0, 18).concat('...')
-    } else {
-        textTitle = deletedText
-    }
-    return {
-        deleteTime: currentMiliSeconds,
-        deletedPhrase: `Удалено ${currentDate} ${currentMonth} ${currentYear}г. в ${currentHours}:${currentMinutes}`,       
-        title: textTitle,
-        text: deletedText,
-        textLength: deletedText.length     
-    }
 }
