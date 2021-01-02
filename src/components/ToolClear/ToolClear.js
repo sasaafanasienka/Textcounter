@@ -53,12 +53,12 @@ class ToolClear extends React.Component {
         return (
             <>
                 <p className='popup__text'>В корзине слишком много элементов. Очистить корзину?</p>
-                <Button type='text' color='red' text='Очистить корзину' onClick={() => {
-                                                                            newLocalStorage.loadTo('recycle', {})
-                                                                            this.loadItemToRecycle()
-                                                                            this.clearTextArea()
-                                                                            this.closePopup()
-                                                                        }} />
+                <Button type='text' color='red' text='Очистить' onClick={() => {
+                                                                    newLocalStorage.loadTo('recycle', {})
+                                                                    this.loadItemToRecycle()
+                                                                    this.clearTextArea()
+                                                                    this.closePopup()
+                                                                }} />
                 <Button type='text' color='red' text='Удалить и не помещать в корзину' onClick={() => {
                                                                                             this.clearTextArea()
                                                                                             this.closePopup()
