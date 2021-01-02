@@ -5,6 +5,7 @@ import LocalStorage from '../../js/localStorage'
 import ToolButton from '../ToolButton/ToolButton';
 import { months } from '../../js/constants'
 import Button from '../Button/Button';
+import Popup from '../Popup/Popup';
 
 const newLocalStorage = new LocalStorage();
 
@@ -49,29 +50,22 @@ class ToolClear extends React.Component {
     }
 
     createPopupContent() {
-        let popupDOM = []
-        popupDOM.push(
+        return (
             <>
                 <p className='popup__text'>В корзине слишком много элементов. Очистить корзину?</p>
-                <Button type='text' 
-                    color='red' 
-                    onClick={() => {
-                            newLocalStorage.loadTo('recycle', {})
-                            this.loadItemToRecycle()
-                            this.clearTextArea()
-                            this.closePopup()
-                        }} 
-                    text='Очистить корзину' 
-                    alt='clear recycle bin button'/>
-                <Button type='text' 
-                    color='grey' 
-                    onClick={this.closePopup} 
-                    text='Отмена' 
-                    alt='clear recycle bin button'/>
+                <Button type='text' color='red' text='Очистить корзину' onClick={() => {
+                                                                            newLocalStorage.loadTo('recycle', {})
+                                                                            this.loadItemToRecycle()
+                                                                            this.clearTextArea()
+                                                                            this.closePopup()
+                                                                        }} />
+                <Button type='text' color='red' text='Удалить и не помещать в корзину' onClick={() => {
+                                                                                            this.clearTextArea()
+                                                                                            this.closePopup()
+                                                                                        }} />
+                <Button type='text' color='grey' text='Отмена' onClick={this.closePopup} />
             </>
         )
-        console.log(popupDOM)
-        return popupDOM
     }
 
     loadItemToRecycle() {
@@ -99,12 +93,15 @@ class ToolClear extends React.Component {
 
     render() {
         return (
-            <ToolButton 
-                type='clear text area'
-                icon={deleteIcon}
-                isActive={this.props.isActive}
-                onClick={this.clear}
-            />
+            <>
+                <ToolButton 
+                    type='clear text area'
+                    icon={deleteIcon}
+                    isActive={this.props.isActive}
+                    onClick={this.clear}
+                />
+                <Popup title='Ошибка' content={this.createPopupContent()}/>
+            </>
         )
     }
 }

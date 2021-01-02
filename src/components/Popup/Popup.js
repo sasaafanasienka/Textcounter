@@ -15,7 +15,7 @@ class Popup extends React.Component {
     render() {
         return(
             <div className='popup'>
-                <PopupTitle title='Attention'/>
+                <PopupTitle title={this.props.title}/>
                 <ButtonClosePopup classToClose='popup' />
                 {this.props.content}
             </div>
