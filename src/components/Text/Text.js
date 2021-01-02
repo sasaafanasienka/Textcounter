@@ -23,7 +23,7 @@ class Text extends React.Component {
         const timerId = setTimeout(() => {
             this.props.onChangeText()
             document.querySelector('.stat').style.opacity = '1'
-        }, 500)
+        }, 300)
         this.setState({timerId: timerId})    
     }
 
