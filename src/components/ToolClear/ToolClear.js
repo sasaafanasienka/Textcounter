@@ -4,6 +4,7 @@ import deleteIcon from '../../images/delete_icon.svg'
 import LocalStorage from '../../js/localStorage'
 import ToolButton from '../ToolButton/ToolButton';
 import { months } from '../../js/constants'
+import Button from '../Button/Button';
 
 const newLocalStorage = new LocalStorage();
 
@@ -11,55 +12,89 @@ class ToolClear extends React.Component {
 
     constructor(props) {
         super(props);
+        this.clear = this.clear.bind(this); //это требуется чтобы не потерять котекст
         this.clearTextArea = this.clearTextArea.bind(this); //это требуется чтобы не потерять котекст
-        this.makeItemForRecycle = this.makeItemForRecycle.bind(this); //это требуется чтобы не потерять котекст
+        this.loadItemToRecycle = this.loadItemToRecycle.bind(this); //это требуется чтобы не потерять котекст
         this.createPopupContent = this.createPopupContent.bind(this); //это требуется чтобы не потерять котекст
-        this.state = {};
-    }
+        this.isFreeSpaceInRecycle = this.isFreeSpaceInRecycle.bind(this); //это требуется чтобы не потерять котекст
+        this.closePopup = this.closePopup.bind(this); //это требуется чтобы не потерять котекст
 
-    clearTextArea() {
-        if (Object.keys(newLocalStorage.loadFrom('recycle')).length >= 3) {
-            document.querySelector('.popup').classList.add('popup_active')
+        this.state = {
+            isClearRecycle: undefined,
+        };
+    }
+    
+    clear() {
+        if (this.isFreeSpaceInRecycle() === true) {
+            this.loadItemToRecycle()
+            this.clearTextArea()
+        } else {
             this.props.onPopupInit(this.createPopupContent())
-            return
+            document.querySelector('.popup').classList.add('popup_active')
         }
-        let textAreaContent = document.querySelector('.text__input').value
-        let dataForRecycle = this.makeItemForRecycle(textAreaContent)
-        newLocalStorage.addTo('recycle', dataForRecycle)
+    }
+    
+    clearTextArea() {
         document.querySelector('.text__input').value = ''
         this.props.onChangeText();
         this.props.onChangeInRecycle();
+    }
+
+    isFreeSpaceInRecycle() {
+        return(Object.keys(newLocalStorage.loadFrom('recycle')).length < 3 ? true : false)
+    }
+
+    closePopup() {
+        document.querySelector('.popup').classList.remove('popup_active')
     }
 
     createPopupContent() {
         let popupDOM = []
         popupDOM.push(
             <>
-                <p className='popup__text'>В корзине слишком много элементов</p>
+                <p className='popup__text'>В корзине слишком много элементов. Очистить корзину?</p>
+                <Button type='text' 
+                    color='red' 
+                    onClick={() => {
+                            newLocalStorage.loadTo('recycle', {})
+                            this.loadItemToRecycle()
+                            this.clearTextArea()
+                            this.closePopup()
+                        }} 
+                    text='Очистить корзину' 
+                    alt='clear recycle bin button'/>
+                <Button type='text' 
+                    color='grey' 
+                    onClick={this.closePopup} 
+                    text='Отмена' 
+                    alt='clear recycle bin button'/>
             </>
         )
         console.log(popupDOM)
         return popupDOM
     }
 
-    makeItemForRecycle(deletedText) {
+    loadItemToRecycle() {
+        const deletedText = document.querySelector('.text__input').value
         const current = new Date();
         const currentDate = current.getDate();
         const currentMonth = months[current.getMonth()];
         const currentYear = current.getFullYear();
         const currentHours = current.getHours();
-        const currentMinutes = current.getMinutes();
-        if (currentMinutes.length === 1) {currentMinutes = `0${currentMinutes}`}
+        let currentMinutes = current.getMinutes().toString();
+        console.log(currentMinutes.length)
+        currentMinutes.length === 1 ? currentMinutes = `0${currentMinutes}` : currentMinutes = currentMinutes
         const currentMiliSeconds = Date.parse(current);
         let textTitle = '';
         (deletedText.length > 18) ? textTitle = deletedText.slice(0, 18).concat('...') : textTitle = deletedText
-        return {
+        const item = {
             deleteTime: currentMiliSeconds,
             deletedPhrase: `Удалено ${currentDate} ${currentMonth} ${currentYear}г. в ${currentHours}:${currentMinutes}`,       
             title: textTitle,
             text: deletedText,
             textLength: deletedText.length     
         }
+        newLocalStorage.addTo('recycle', item)
     }
 
     render() {
@@ -68,7 +103,7 @@ class ToolClear extends React.Component {
                 type='clear text area'
                 icon={deleteIcon}
                 isActive={this.props.isActive}
-                onClick={this.clearTextArea}
+                onClick={this.clear}
             />
         )
     }

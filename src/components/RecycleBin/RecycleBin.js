@@ -51,7 +51,7 @@ class RecycleBin extends React.Component {
 
     renderClearAllButton() {
         return (Object.keys(this.props.itemsInRecycle).length !== 0 ?
-        <Button type='text' color='red' onClick={this.clearAll} text='очистить корзину' alt='fish text button'/> : null)
+        <Button type='text' color='red' onClick={this.clearAll} text='очистить корзину' alt='clear recycle bin button'/> : null)
     }
 
     clearAll() {

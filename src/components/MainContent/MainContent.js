@@ -51,7 +51,7 @@ class MainContent extends React.Component {
     popupInit(popupContent) {
         console.log(popupContent)
         this.setState({
-            textOnPopup: popupContent
+            contentOnPopup: popupContent
         })
     }
 
@@ -71,7 +71,7 @@ class MainContent extends React.Component {
                 <RecycleBin itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle} onChangeText={this.onChangeText}/>
                 <Text onChangeText={this.onChangeText} text={this.state.text}/>
                 <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text} onPopupInit={this.popupInit}/>
-                <Popup text={this.state.textOnPopup}/>
+                <Popup content={this.state.contentOnPopup}/>
                 <Footer />
             </div>
         )
