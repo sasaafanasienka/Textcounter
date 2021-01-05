@@ -1,10 +1,12 @@
+@import '../../../styles/variables.scss';
+
 .text__input {
     width: 100%;
     height: calc(100vh - 200px);
     box-sizing: border-box;
     background-color: #EEEEEE;
     border: 1px solid #DDDDDD;
-    border-radius: 5px;
+    border-radius: $mainBorderRadius;
     padding: 32px;
     resize: none;
 }

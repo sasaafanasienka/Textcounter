@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .recycle-bin { 
     position: fixed;
     
@@ -8,9 +10,9 @@
     flex-direction: column;
 
     width: 260px;
-    border-radius: 25px;
+    border-radius: $mainBorderRadius;
 
-    background-color: rgba(0, 0, 0, .8);
+    background-color: $popupColor;
     border: none;
     outline: none;
 

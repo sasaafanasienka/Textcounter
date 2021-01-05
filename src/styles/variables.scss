@@ -1,6 +1,7 @@
 //colors
-$backgroundColor: white !global;
-$backgroundColorNight: rgb(48, 44, 44) !global;
-$lightGrey: rgb(245, 245, 245) !global;
+$backgroundColor: white;
+$popupColor: rgba(0, 0, 0, .8);
+$borderColor: rgba(215,215,215,1);
 
-$borderColor: rgba(215,215,215,1) !global;
+//size
+$mainBorderRadius: 5px !global;

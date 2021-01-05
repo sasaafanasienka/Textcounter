@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './tool-button.scss'
+import './tool-button.sass'
 
 class ToolButton extends React.Component {
 

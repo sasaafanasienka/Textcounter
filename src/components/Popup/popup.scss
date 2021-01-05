@@ -1,5 +1,7 @@
 @import './__text/popup__text.scss';
 
+@import '../../styles/variables.scss';
+
 .popup {
     display: none;
     flex-direction: column;
@@ -12,10 +14,10 @@
     // height: 300px;
 
     padding: 25px;
-    border-radius: 5px;
+    border-radius: $mainBorderRadius;
     box-sizing: border-box;
 
-    background-color: black;
+    background-color: $popupColor;
 
     z-index: 10003;
 }
