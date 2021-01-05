@@ -27,8 +27,7 @@ class RecycleItem extends React.Component {
     }
 
     recover() {
-        console.log(1)
-        const recycle = JSON.parse(localStorage.recycle)
+        const recycle = newLocalStorage.loadFrom('recycle')
         document.querySelector('.text__input').value = recycle[this.state.key].text
         this.refreshStat();
     }
