@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Textcounter/static/css/main.2c31e79b.chunk.css",
-    "main.js": "/Textcounter/static/js/main.1df397b1.chunk.js",
-    "main.js.map": "/Textcounter/static/js/main.1df397b1.chunk.js.map",
-    "runtime-main.js": "/Textcounter/static/js/runtime-main.29f188ff.js",
-    "runtime-main.js.map": "/Textcounter/static/js/runtime-main.29f188ff.js.map",
-    "static/js/2.fcefbe1d.chunk.js": "/Textcounter/static/js/2.fcefbe1d.chunk.js",
-    "static/js/2.fcefbe1d.chunk.js.map": "/Textcounter/static/js/2.fcefbe1d.chunk.js.map",
-    "static/js/3.71250683.chunk.js": "/Textcounter/static/js/3.71250683.chunk.js",
-    "static/js/3.71250683.chunk.js.map": "/Textcounter/static/js/3.71250683.chunk.js.map",
+    "main.css": "/Textcounter/static/css/main.3d3d1226.chunk.css",
+    "main.js": "/Textcounter/static/js/main.ad81d70c.chunk.js",
+    "main.js.map": "/Textcounter/static/js/main.ad81d70c.chunk.js.map",
+    "runtime-main.js": "/Textcounter/static/js/runtime-main.7c464ec7.js",
+    "runtime-main.js.map": "/Textcounter/static/js/runtime-main.7c464ec7.js.map",
+    "static/js/2.026918ad.chunk.js": "/Textcounter/static/js/2.026918ad.chunk.js",
+    "static/js/2.026918ad.chunk.js.map": "/Textcounter/static/js/2.026918ad.chunk.js.map",
+    "static/js/3.297c0667.chunk.js": "/Textcounter/static/js/3.297c0667.chunk.js",
+    "static/js/3.297c0667.chunk.js.map": "/Textcounter/static/js/3.297c0667.chunk.js.map",
     "index.html": "/Textcounter/index.html",
-    "static/css/main.2c31e79b.chunk.css.map": "/Textcounter/static/css/main.2c31e79b.chunk.css.map",
-    "static/js/2.fcefbe1d.chunk.js.LICENSE.txt": "/Textcounter/static/js/2.fcefbe1d.chunk.js.LICENSE.txt",
+    "static/css/main.3d3d1226.chunk.css.map": "/Textcounter/static/css/main.3d3d1226.chunk.css.map",
+    "static/js/2.026918ad.chunk.js.LICENSE.txt": "/Textcounter/static/js/2.026918ad.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Textcounter/static/media/Gilroy-Thin.4b118de0.woff",
     "static/media/close.1287881a.svg": "/Textcounter/static/media/close.1287881a.svg",
     "static/media/copy_icon.e7765d1b.svg": "/Textcounter/static/media/copy_icon.e7765d1b.svg",
@@ -26,9 +26,9 @@
     "static/media/recycle.e52d6c54.svg": "/Textcounter/static/media/recycle.e52d6c54.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.29f188ff.js",
-    "static/js/2.fcefbe1d.chunk.js",
-    "static/css/main.2c31e79b.chunk.css",
-    "static/js/main.1df397b1.chunk.js"
+    "static/js/runtime-main.7c464ec7.js",
+    "static/js/2.026918ad.chunk.js",
+    "static/css/main.3d3d1226.chunk.css",
+    "static/js/main.ad81d70c.chunk.js"
   ]
 }
