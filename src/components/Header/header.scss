@@ -1,7 +1,8 @@
-// @import './__logo/header__logo.scss';
-@import '../../../styles/variables.scss';
+@import './__logo/header__logo.scss';
 
-.main-content__toolbar {
+@import '../../styles/variables.scss';
+
+.header {
 
     position: fixed;
 
@@ -24,13 +25,13 @@
 }
 
 @media (max-width: 1023px) {
-    .main-content__toolbar {
+    .header {
         padding: 10px 60px;
     }
 }
 
 @media (max-width: 567px) {
-    .main-content__toolbar {
+    .header {
         padding: 10px 20px;
     }
 }

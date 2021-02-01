@@ -1,20 +1,21 @@
 import './App.scss';
-import MainContent from './components/MainContent/MainContent';
-import { Route,  Switch } from 'react-router-dom';
+import MainContent from './components/Main/Main';
 import AboutAuthor from './components/AboutAuthor/AboutAuthor';
+import { Route,  Switch } from 'react-router-dom';
+import Main from './components/Main/Main';
+import Header from './components/Header/Header';
 
 function App() {
 
   return (
     <div className="App">
-      <Switch>
+        <Header />
         <Route exact path='/'>
-          <MainContent />
+          <Main />
         </Route>
-        <Route exact path='/about'>
+        <Route path='/about'>
           <AboutAuthor />
         </Route>
-      </Switch>
     </div>
   );
 }

@@ -1,0 +1,36 @@
+// @import './__logo/header__logo.scss';
+@import '../../../styles/variables.scss';
+
+.main__toolbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 120px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid $borderColor;
+
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10000;
+}
+
+@media (max-width: 1023px) {
+    .main__toolbar {
+        padding: 10px 60px;
+    }
+}
+
+@media (max-width: 567px) {
+    .main__toolbar {
+        padding: 10px 20px;
+    }
+}

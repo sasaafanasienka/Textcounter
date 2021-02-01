@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Text from '../Text/Text';
 import Stat from '../Stat/Stat';
-import './main-content.scss'
+import './main.scss'
 import ToolBar from '../ToolBar/ToolBar';
 import TextGenerator from '../TextGenerator/TextGenerator';
 import headerLogo from '../../images/logo.svg';
@@ -14,7 +14,7 @@ import Popup from '../Popup/Popup';
 
 const newLocalStorage = new LocalStorage()
 
-class MainContent extends React.Component {
+class Main extends React.Component {
 
     constructor(props){
         super(props);
@@ -60,13 +60,7 @@ class MainContent extends React.Component {
         const recycleContent = this.state.recycle
 
         return(
-            <div className='main-content'>
-                <div className='main-content__toolbar'>
-                    <img className='main-content__logo' alt='app logo' src={headerLogo} />
-                    <Stat text={this.state.text} onChangeText={this.onChangeText}/>
-                    <TextGenerator onChangeText={this.onChangeText}/>
-                    <RecycleButton itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle}/>
-                </div>
+            <div className='main'>
                 <RecycleBin itemsInRecycle={recycleContent} onChangeInRecycle={this.onChangeInRecycle} onChangeText={this.onChangeText}/>
                 <Text onChangeText={this.onChangeText} text={this.state.text}/>
                 <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text} onPopupInit={this.popupInit}/>
@@ -77,4 +71,4 @@ class MainContent extends React.Component {
 
 }
 
-export default MainContent;
+export default Main;

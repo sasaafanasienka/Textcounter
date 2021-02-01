@@ -9,6 +9,7 @@ function Footer() {
   return (
     <div className="footer">
       <p className='footer__text'>Александр Афанасенко, 2020</p>
+      <a href="./about"><p className='footer__text'>Об авторе</p></a>
       <div className='footer__social-links'>
         <a className='footer__icon-link' href="https://www.facebook.com/sasaafanasienka">
             <img src={facebookLogo} alt="Facebook logo" />
