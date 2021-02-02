@@ -4,40 +4,33 @@ import './text.scss'
 import EditButton from '../ToolButton/ToolButton';
 import PopupMessage from '../PopupMessage/PopupMessage';
 
-class Text extends React.Component {
+import { TextContext } from '../../contexts/TextContext';
 
+function Text() {
 
-    constructor(props) {
-        super(props);
+    // function statCount() {
+    //     clearTimeout(this.state.timerId)
+    //     document.querySelector('.stat').style.opacity = '0.3'
+    //     const timerId = setTimeout(() => {
+    //         this.props.onChangeText()
+    //         document.querySelector('.stat').style.opacity = '1'
+    //     }, 250)
+    //     this.setState({timerId: timerId})    
+    // }
 
-        this.state = {
-            timerId: 0
-        }
-
-        this.statCount = this.statCount.bind(this); //это требуется чтобы не потерять котекст в statcount
+    function statChanging() {
+        console.log('text changed')
+        // setNewContext()
     }
 
-    statCount() {
-        clearTimeout(this.state.timerId)
-        document.querySelector('.stat').style.opacity = '0.3'
-        const timerId = setTimeout(() => {
-            this.props.onChangeText()
-            document.querySelector('.stat').style.opacity = '1'
-        }, 250)
-        this.setState({timerId: timerId})    
-    }
-
-    render() {
-
-        return(
-            <div className='text'>
-                <textarea onChange={this.statCount} 
-                        className='text__input' 
-                        type="text" 
-                        placeholder="Ваш текст" />
-            </div>
-        )
-    }
+    return(
+        <div className='text'>
+            <textarea onChange={statChanging}
+                    className='text__input' 
+                    type="text" 
+                    placeholder="Ваш текст" />
+        </div>
+    )
 }
 
 export default Text;

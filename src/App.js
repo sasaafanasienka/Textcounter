@@ -1,7 +1,10 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import './App.scss';
 import MainContent from './components/Main/Main';
 import AboutAuthor from './components/AboutAuthor/AboutAuthor';
-import { Route,  Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 
@@ -11,7 +14,7 @@ function App() {
     <div className="App">
         <Header />
         <Route exact path='/'>
-          <Main />
+            <Main />
         </Route>
         <Route path='/about'>
           <AboutAuthor />
