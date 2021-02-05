@@ -1,3 +1,6 @@
+@import '../../../styles/variables.scss';
+
+
 .stat__number {
 
     font-family: Gilroy;
@@ -8,10 +11,14 @@
 
     margin: 0;
 
-    color: black;
+    color: $textColorLight;
 
     letter-spacing: 1px;
     text-align: left;
+}
+
+.stat__number_dark {
+    color: $textColorDark;
 }
 
 @media (max-width: 379px) {

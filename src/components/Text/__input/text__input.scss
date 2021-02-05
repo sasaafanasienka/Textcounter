@@ -4,16 +4,24 @@
     width: 100%;
     height: calc(100vh - 200px);
     box-sizing: border-box;
-    background-color: #EEEEEE;
-    border: 1px solid #DDDDDD;
+    background-color: $textInputColorLight;
+    border: none;
     border-radius: $mainBorderRadius;
     padding: 32px;
     resize: none;
+    color: $textColorLight;
+    outline: none;
+
+}
+
+.text__input_dark {
+    background-color: $textInputColorDark;
+    // border: 1px solid $borderColorDark;
+    color: $textColorDark;
 }
 
 .text__input:focus {
     outline: none;
-    border: 1px solid #DDDDDD;
 }
 
 @media (max-width: 567px) {

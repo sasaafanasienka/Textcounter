@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Text from '../Text/Text';
 import Stat from '../Stat/Stat';
@@ -11,15 +11,19 @@ import RecycleBin from '../RecycleBin/RecycleBin';
 import LocalStorage from '../../js/localStorage';
 import Footer from '../Footer/Footer'
 import Popup from '../Popup/Popup';
+import { themeClassName } from '../../js/utilits/themeClassName';
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 const newLocalStorage = new LocalStorage()
 
 
-function Main() {
+function Main(props) {
 
     if (localStorage.recycle === undefined) { //создаем корзину если она еще не создана
         newLocalStorage.loadTo('recycle', {}) 
     }
+    const themeData = React.useContext(ThemeContext);
+    const mainClassName = themeClassName(themeData, 'main')
 
     // function onChangeText() {
     //     let valueOfTextArea = document.querySelector('.text__input').value
@@ -46,9 +50,10 @@ function Main() {
     // const recycleContent = this.state.recycle
 
     return(
-        <div className='main'>
+        <div className={mainClassName}>
             {/* <RecycleBin itemsInRecycle={'recycleContent'} onChangeInRecycle={this.onChangeInRecycle} onChangeText={this.onChangeText}/> */}
             <Text />
+            <ToolBar onChangeTheme={props.onChangeTheme}/>
             {/* <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text} onPopupInit={this.popupInit}/> */}
             <Footer />
         </div>

@@ -3,18 +3,28 @@ import Stat from '../Stat/Stat';
 import './header.scss'
 import TextGenerator from '../TextGenerator/TextGenerator';
 import headerLogo from '../../images/logo.svg';
+import headerLogo_dark from '../../images/logo_dark.svg';
 import RecycleButton from '../RecycleButton/RecycleButton';
 import LocalStorage from '../../js/localStorage';
 
-function Header(props) {
+import { ThemeContext } from '../../contexts/ThemeContext'
+import { themeClassName } from '../../js/utilits/themeClassName';
+
+function Header() {
+
+    const themeData = React.useContext(ThemeContext);
+    const classNameByTheme = themeClassName(themeData, 'header')
+    let logoImport
+    themeData.id === 0 ? logoImport = headerLogo : logoImport = headerLogo_dark
+
 
     return(
-        <div className='header'>
-            <img className='header__logo' alt='app logo' src={headerLogo} />
-            {/* <Stat text={text} onChangeText={'this.onChangeText'}/> */}
+        <header className={classNameByTheme}>
+            <img className='header__logo' alt='app logo' src={logoImport} />
+            <Stat text={''} onChangeText={'this.onChangeText'}/>
             {/* <TextGenerator onChangeText={'this.onChangeText'}/>
             <RecycleButton itemsInRecycle='1' onChangeInRecycle={'this.onChangeInRecycle'}/> */}
-        </div>
+        </header>
         )
 }
 

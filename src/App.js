@@ -8,18 +8,28 @@ import { Route } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 
+import { ThemeContext, themes } from './contexts/ThemeContext'
+
 function App() {
 
+  const [theme, changeTheme] = React.useState('dark');
+  console.log(themes[theme])
+
   return (
-    <div className="App">
-        <Header />
-        <Route exact path='/'>
-            <Main />
-        </Route>
-        <Route path='/about'>
-          <AboutAuthor />
-        </Route>
-    </div>
+    <ThemeContext.Provider value={themes[theme]}> 
+
+      <div className="App">
+          <Header />
+
+          <Route exact path='/'>
+            <Main onChangeTheme={changeTheme}/>
+          </Route>
+
+          <Route path='/about'>
+            <AboutAuthor />
+          </Route>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

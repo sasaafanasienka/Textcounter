@@ -3,48 +3,51 @@ import ReactDOM from 'react-dom';
 import './stat.scss'
 import '../../styles/main.scss'
 import { rightWord } from '../../js/utilits/rightWord'
+import { ThemeContext } from '../../contexts/ThemeContext'
+import { themeClassName } from '../../js/utilits/themeClassName';
 
-class Stat extends React.Component {
+function Stat(props) {
 
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {
-            text: ''
-        }
-    }
+    //     this.state = {
+    //         text: ''
+    //     }
+    // }
 
-    symbolsCount() {
-        const text = this.props.text
+    const themeData = React.useContext(ThemeContext);
+    const numbersClassName = themeClassName(themeData, 'stat__number')
+
+    function symbolsCount() {
+        const text = props.text
         return text.length
     }
 
-    wordsCount() {
+    function wordsCount() {
         const paragraphSymbol = /\n/g
-        const text = this.props.text.toLowerCase().replace(paragraphSymbol, ' ')
+        const text = props.text.toLowerCase().replace(paragraphSymbol, ' ')
         const words = text.split(' ').filter((item) => { //split делает массив из строк разделенных ' '
             return item !== ''  //filter создает новый массив убирая из старого пустые строки
         })
         return words.length      
     }
 
-    paragraphsCount() {
-        const text = this.props.text
+    function paragraphsCount() {
+        const text = props.text
         const paragraphs = text.split('\n').filter((item) => { //split делает массив из строк разделенных ' '
             return item !== ''  //filter создает новый массив убирая из старого пустые строки
         })
         return paragraphs.length      
     }
 
-    render() {
-        return(
-            <div className='stat'>
-                <p className='stat__number'>{rightWord(this.symbolsCount(), 'знак')}</p>
-                <p className='stat__number'>{rightWord(this.wordsCount(), 'слово')}</p>
-                <p className='stat__number'>{rightWord(this.paragraphsCount(), 'абзац')}</p>
-            </div>
-        )
-    }
+    return(
+        <div className='stat'>
+            <p className={numbersClassName}>{rightWord(symbolsCount(), 'знак')}</p>
+            <p className={numbersClassName}>{rightWord(wordsCount(), 'слово')}</p>
+            <p className={numbersClassName}>{rightWord(paragraphsCount(), 'абзац')}</p>
+        </div>
+    )
 
 }
 

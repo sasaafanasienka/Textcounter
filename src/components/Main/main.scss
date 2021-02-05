@@ -1,4 +1,4 @@
-@import './__toolbar/main__toolbar.scss';
+@import '../../styles/variables.scss';
 
 .main {
     position: relative;
@@ -6,9 +6,13 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-
+    background-color: $backgroundColorLight;
     padding: 120px 120px 20px 120px;
     box-sizing: border-box;
+}
+
+.main_dark {
+    background-color: $backgroundColorDark;
 }
 
 @media (max-width: 1023px) {

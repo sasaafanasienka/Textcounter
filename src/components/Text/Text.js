@@ -4,10 +4,15 @@ import './text.scss'
 import EditButton from '../ToolButton/ToolButton';
 import PopupMessage from '../PopupMessage/PopupMessage';
 
-import { TextContext } from '../../contexts/TextContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { themeClassName } from '../../js/utilits/themeClassName';
 
 function Text() {
 
+    
+    const themeData = React.useContext(ThemeContext);
+
+    const inputClassName = themeClassName(themeData, 'text__input')
     // function statCount() {
     //     clearTimeout(this.state.timerId)
     //     document.querySelector('.stat').style.opacity = '0.3'
@@ -18,15 +23,15 @@ function Text() {
     //     this.setState({timerId: timerId})    
     // }
 
-    function statChanging() {
-        console.log('text changed')
-        // setNewContext()
-    }
+    // function statChanging() {
+    //     // setText('Жопа')
+    //     setText(document.querySelector('.text__input').value)
+    // }
 
     return(
         <div className='text'>
-            <textarea onChange={statChanging}
-                    className='text__input' 
+            <textarea // onChange={}
+                    className={inputClassName} 
                     type="text" 
                     placeholder="Ваш текст" />
         </div>

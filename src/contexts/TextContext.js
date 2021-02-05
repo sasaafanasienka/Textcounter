@@ -1,14 +1,11 @@
 import React from 'react';
 
-export const TextContext = React.createContext({
-  text: 'залупа коня',
-  setNewContext: () => {
-    console.log(1)
-  }
-});
+let text = ''
 
-// export const text = {
-//   data: {
-//     text: ''
-//   }
-// };
+export function setText(value) {
+  text = value
+  console.log(text)
+  React.createContext(text)
+}
+
+export let TextContext = React.createContext(text);

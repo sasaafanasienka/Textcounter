@@ -7,6 +7,7 @@ import PopupMessage from '../PopupMessage/PopupMessage';
 import ToolPaste from '../ToolPaste/ToolPaste';
 import ToolCopy from '../ToolCopy/ToolCopy';
 import ToolClear from '../ToolClear/ToolClear';
+import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 
 class ToolBar extends React.Component {
@@ -35,24 +36,25 @@ class ToolBar extends React.Component {
 
     render() {
 
-        let isTextAreaHasContent = true
-        let isClibBoardHasContent = true
-        if (this.props.text.length === 0) {
-            isTextAreaHasContent = false
-        }
-        navigator.clipboard.readText()
-        .then(text => {
-            if (text.length === 0) {
-                isClibBoardHasContent = false
-            }    
-        })
+        // let isTextAreaHasContent = true
+        // let isClibBoardHasContent = true
+        // if (this.props.text.length === 0) {
+        //     isTextAreaHasContent = false
+        // }
+        // navigator.clipboard.readText()
+        // .then(text => {
+        //     if (text.length === 0) {
+        //         isClibBoardHasContent = false
+        //     }    
+        // })
         
         return(
             <div className='toolbar'>
-                <ToolCopy isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/>
-                <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/>
-                <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} onPopupInit={this.onPopupInit}/>
-                <PopupMessage />
+                <ToggleTheme onChangeTheme={this.props.onChangeTheme}/>
+                {/* <ToolCopy isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/> */}
+                {/* <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/> */}
+                {/* <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} onPopupInit={this.onPopupInit}/> */}
+                {/* <PopupMessage /> */}
             </div>
         )
     }

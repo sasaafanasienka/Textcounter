@@ -1,7 +1,18 @@
 //colors
-$backgroundColor: white;
+$backgroundColorLight: #FFFFFB;
+$backgroundColorDark: #222222;
+
+$borderColorLight: rgba(215,215,215,1);
+$borderColorDark: rgb(99, 99, 99);
+
+$textInputColorLight: #EEEEEE;
+$textInputColorDark: #3a3a3a;
+
+$textColorLight: black;
+$textColorDark: rgb(223, 200, 0);
+
+
 $popupColor: rgba(0, 0, 0, .8);
-$borderColor: rgba(215,215,215,1);
 
 //size
 $mainBorderRadius: 5px !global;
