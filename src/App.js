@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './App.scss';
-import MainContent from './components/Main/Main';
 import AboutAuthor from './components/AboutAuthor/AboutAuthor';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 
@@ -27,6 +26,10 @@ function App() {
 
           <Route path='/about'>
             <AboutAuthor />
+          </Route>
+
+          <Route path="*">
+            <Redirect to="/" />
           </Route>
       </div>
     </ThemeContext.Provider>
