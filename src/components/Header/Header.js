@@ -10,7 +10,7 @@ import LocalStorage from '../../js/localStorage';
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { themeClassName } from '../../js/utilits/themeClassName';
 
-function Header() {
+function Header(props) {
 
     const themeData = React.useContext(ThemeContext);
     const classNameByTheme = themeClassName(themeData, 'header')
@@ -21,7 +21,7 @@ function Header() {
     return(
         <header className={classNameByTheme}>
             <img className='header__logo' alt='app logo' src={logoImport} />
-            <Stat text={''} onChangeText={'this.onChangeText'}/>
+            <Stat textValue={props.textValue} onChangeText={'this.onChangeText'}/>
             {/* <TextGenerator onChangeText={'this.onChangeText'}/>
             <RecycleButton itemsInRecycle='1' onChangeInRecycle={'this.onChangeInRecycle'}/> */}
         </header>

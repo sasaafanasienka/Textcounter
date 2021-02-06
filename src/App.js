@@ -13,16 +13,16 @@ import { ThemeContext, themes } from './contexts/ThemeContext'
 function App() {
 
   const [theme, changeTheme] = React.useState('dark');
-  console.log(themes[theme])
+  const [textValue, changeText] = React.useState('');
 
   return (
     <ThemeContext.Provider value={themes[theme]}> 
 
       <div className="App">
-          <Header />
+          <Header textValue={textValue}/>
 
           <Route exact path='/'>
-            <Main onChangeTheme={changeTheme}/>
+            <Main onChangeTheme={changeTheme} onChangeText={changeText}/>
           </Route>
 
           <Route path='/about'>

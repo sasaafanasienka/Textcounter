@@ -8,25 +8,17 @@ import { themeClassName } from '../../js/utilits/themeClassName';
 
 function Stat(props) {
 
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         text: ''
-    //     }
-    // }
-
     const themeData = React.useContext(ThemeContext);
     const numbersClassName = themeClassName(themeData, 'stat__number')
 
     function symbolsCount() {
-        const text = props.text
+        const text = props.textValue
         return text.length
     }
 
     function wordsCount() {
         const paragraphSymbol = /\n/g
-        const text = props.text.toLowerCase().replace(paragraphSymbol, ' ')
+        const text = props.textValue.toLowerCase().replace(paragraphSymbol, ' ')
         const words = text.split(' ').filter((item) => { //split делает массив из строк разделенных ' '
             return item !== ''  //filter создает новый массив убирая из старого пустые строки
         })
@@ -34,7 +26,7 @@ function Stat(props) {
     }
 
     function paragraphsCount() {
-        const text = props.text
+        const text = props.textValue
         const paragraphs = text.split('\n').filter((item) => { //split делает массив из строк разделенных ' '
             return item !== ''  //filter создает новый массив убирая из старого пустые строки
         })

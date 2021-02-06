@@ -7,12 +7,14 @@ import PopupMessage from '../PopupMessage/PopupMessage';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { themeClassName } from '../../js/utilits/themeClassName';
 
-function Text() {
+function Text(props) {
 
-    
     const themeData = React.useContext(ThemeContext);
-
     const inputClassName = themeClassName(themeData, 'text__input')
+
+    function sendTextToStatCount() {
+        props.onChangeText(document.querySelector('.text__input').value)
+    }
     // function statCount() {
     //     clearTimeout(this.state.timerId)
     //     document.querySelector('.stat').style.opacity = '0.3'
@@ -30,7 +32,7 @@ function Text() {
 
     return(
         <div className='text'>
-            <textarea // onChange={}
+            <textarea onChange={sendTextToStatCount}
                     className={inputClassName} 
                     type="text" 
                     placeholder="Ваш текст" />
