@@ -1,33 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import copyIcon from '../../images/copy_icon.svg'
+import copyIconLight from '../../images/copy_icon_light.svg'
+import copyIconDark from '../../images/copy_icon_dark.svg'
 import { showPopupMessage } from '../../js/utilits'
 import ToolButton from '../ToolButton/ToolButton';
 
-class ToolCopy extends React.Component {
+function ToolCopy(props) {
 
-    constructor(props) {
-        super(props);
-        this.copyTextArea = this.copyTextArea.bind(this); //это требуется чтобы не потерять котекст
-        this.state = {};
-    }
+    let copyIcon
+    props.theme === 'light' ? copyIcon = copyIconLight : copyIcon = copyIconDark
 
-    copyTextArea(event) {
+    function copyTextArea(event) {
         const text = document.querySelector('.text__input').value
         navigator.clipboard.writeText(text);
-        showPopupMessage(event.clientX, event.clientY, 'Скопировано в буфер', 'green')
+        // showPopupMessage(event.clientX, event.clientY, 'Скопировано в буфер', 'green')
     }
 
-    render() {
-        return (
-            <ToolButton 
-                type='copy'
-                icon={copyIcon}
-                isActive={this.props.isActive}
-                onClick={this.copyTextArea}
-            />
-        )
-    }
+    return (
+        <ToolButton 
+            type='copy'
+            icon={copyIcon}
+            isActive={props.isActive}
+            onClick={copyTextArea}
+        />
+    )
+    
 }
 
 export default ToolCopy;

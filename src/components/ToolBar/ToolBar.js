@@ -8,56 +8,50 @@ import ToolPaste from '../ToolPaste/ToolPaste';
 import ToolCopy from '../ToolCopy/ToolCopy';
 import ToolClear from '../ToolClear/ToolClear';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 
-class ToolBar extends React.Component {
+function ToolBar(props) {
 
-    constructor(props) {
+    const themeData = React.useContext(ThemeContext);
+    let themeProp
+    themeData.id === 0 ? themeProp = 'light' : themeProp = 'dark' 
 
-        super(props);
-        this.state = {};
-        this.onChangeText = this.onChangeText.bind(this); //это требуется чтобы не потерять котекст в onChangeText
-        this.onChangeInRecycle = this.onChangeInRecycle.bind(this); //это требуется чтобы не потерять котекст в onChangeText
-        this.onPopupInit = this.onPopupInit.bind(this); //это требуется чтобы не потерять котекст в onChangeText
+    function onChangeText() {
+        props.onChangeText(); //эта строка отправляет данные поля ввода в пропсы maincontent
     }
 
-    onChangeText() {
-        this.props.onChangeText(); //эта строка отправляет данные поля ввода в пропсы maincontent
-    }
-
-    onChangeInRecycle() {
+    function onChangeInRecycle() {
         console.log('toolbar on change in recycle')
-        this.props.onChangeInRecycle(); //эта строка отправляет данные поля ввода в пропсы maincontent
+        props.onChangeInRecycle(); //эта строка отправляет данные поля ввода в пропсы maincontent
     }
 
-    onPopupInit(popupContent) {
-        this.props.onPopupInit(popupContent)
+    function onPopupInit(popupContent) {
+        props.onPopupInit(popupContent)
     }
 
-    render() {
+    let isTextAreaHasContent = true
 
-        // let isTextAreaHasContent = true
-        // let isClibBoardHasContent = true
-        // if (this.props.text.length === 0) {
-        //     isTextAreaHasContent = false
-        // }
-        // navigator.clipboard.readText()
-        // .then(text => {
-        //     if (text.length === 0) {
-        //         isClibBoardHasContent = false
-        //     }    
-        // })
-        
-        return(
-            <div className='toolbar'>
-                <ToggleTheme onChangeTheme={this.props.onChangeTheme}/>
-                {/* <ToolCopy isActive={isTextAreaHasContent} onChangeText={this.onChangeText}/> */}
-                {/* <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/> */}
-                {/* <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} onPopupInit={this.onPopupInit}/> */}
-                {/* <PopupMessage /> */}
-            </div>
-        )
+    // let isClibBoardHasContent = true
+    if (props.textValue.length === 0) {
+        isTextAreaHasContent = false
     }
+    // navigator.clipboard.readText()
+    // .then(text => {
+    //     if (text.length === 0) {
+    //         isClibBoardHasContent = false
+    //     }    
+    // })
+    
+    return(
+        <div className='toolbar'>
+            <ToggleTheme onChangeTheme={props.onChangeTheme}/>
+            <ToolCopy theme={themeProp} isActive={isTextAreaHasContent} onChangeText={onChangeText}/>
+            {/* <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/> */}
+            {/* <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} onPopupInit={this.onPopupInit}/> */}
+            {/* <PopupMessage /> */}
+        </div>
+    )
 }
 
 export default ToolBar;

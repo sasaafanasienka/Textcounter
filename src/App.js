@@ -22,7 +22,7 @@ function App() {
           <Header textValue={textValue} onChangeText={changeText}/>
 
           <Route exact path='/'>
-            <Main onChangeTheme={changeTheme} onChangeText={changeText}/>
+            <Main textValue={textValue} onChangeTheme={changeTheme} onChangeText={changeText}/>
           </Route>
 
           <Route path='/about'>

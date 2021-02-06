@@ -53,7 +53,7 @@ function Main(props) {
         <div className={mainClassName}>
             {/* <RecycleBin itemsInRecycle={'recycleContent'} onChangeInRecycle={this.onChangeInRecycle} onChangeText={this.onChangeText}/> */}
             <Text onChangeText={props.onChangeText}/>
-            <ToolBar onChangeTheme={props.onChangeTheme}/>
+            <ToolBar textValue={props.textValue} onChangeTheme={props.onChangeTheme}/>
             {/* <ToolBar onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} text={this.state.text} onPopupInit={this.popupInit}/> */}
             <Footer />
         </div>
