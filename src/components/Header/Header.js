@@ -21,9 +21,9 @@ function Header(props) {
     return(
         <header className={classNameByTheme}>
             <img className='header__logo' alt='app logo' src={logoImport} />
-            <Stat textValue={props.textValue} onChangeText={'this.onChangeText'}/>
-            {/* <TextGenerator onChangeText={'this.onChangeText'}/>
-            <RecycleButton itemsInRecycle='1' onChangeInRecycle={'this.onChangeInRecycle'}/> */}
+            <Stat textValue={props.textValue} />
+            <TextGenerator onChangeText={props.onChangeText}/>
+            {/* <RecycleButton itemsInRecycle='1' onChangeInRecycle={'this.onChangeInRecycle'}/> */}
         </header>
         )
 }

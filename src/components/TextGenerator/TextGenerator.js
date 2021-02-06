@@ -1,64 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Api } from '../../js/api';
-import { alphabet } from '../../js/constants';
 import { showPopupMessage } from '../../js/utilits'
 import fishicon from '../../images/fish.svg'
 import Button from '../Button/Button'
-const api = (template) => new Api(template);
+import axios from 'axios'
+// import { ThemeContext } from '../../contexts/ThemeContext'
 
+// const api = (template) => new Api(template);
+const API = 'https://fish-text.ru/get?type=paragraph&number=10'
 
 class TextGenerator extends React.Component {
 
     constructor(props) {
-        super(props);
-
+        super(props)
         this.state = {
-            popupWasShown: false
+
         }
 
-        this.statCount = this.statCount.bind(this); //это требуется чтобы не потерять котекст
-        this.textGen = this.textGen.bind(this); //это требуется чтобы не потерять котекст
-        this.editText = this.editText.bind(this); //это требуется чтобы не потерять котекст
-        this.showPopup = this.showPopup.bind(this); //это требуется чтобы не потерять котекст
+        this.textGen = this.textGen.bind(this)
+        this.editText = this.editText.bind(this)
+        this.sendTextToStatCount = this.sendTextToStatCount.bind(this)
     }
 
-    statCount() {
-        this.props.onChangeText();
+    sendTextToStatCount(text) {
+        this.props.onChangeText(text)
     }
-
+    
     editText(text) {
         const textToReplace = /\\n\\n/g
         let editedText = text.replace(textToReplace, '\n')
-        document.querySelector('.text__input').value = editedText
-        this.statCount()
+        return editedText
     }
-
-    textGen(event) {
-        api('standings').request()
-            .then((result) => {
-                this.editText(result.text)
+    
+    textGen() {
+        axios.get(API)
+            .then((res) => {
+                const editedText = this.editText(res.data.text)
+                document.querySelector('.text__input').value = document.querySelector('.text__input').value + editedText
+                this.sendTextToStatCount(document.querySelector('.text__input').value)
             })
             .catch(() => {
                 console.log('Error in server request')
-                showPopupMessage(event.clientX, event.clientY, 'Ошибка запроса к серверу fish-text.ru', 'red')
+                // showPopupMessage(event.clientX, event.clientY, 'Ошибка запроса к серверу fish-text.ru', 'red')
             })
-    }
 
-    showPopup(event) {
-        showPopupMessage(event.clientX, event.clientY, 'генерировать рыбный текст', 'black')
-        this.setState({popupWasShown: true})
-        setTimeout(() => {
-            this.setState({popupWasShown: false})
-        }, 60000)
     }
 
     render() {
-        let showPopupFunc = this.showPopup
-        if (this.state.popupWasShown === true) {
-            showPopupFunc = null;
-        }
-        
         return(
             <Button 
                 type='main' 
@@ -67,9 +55,54 @@ class TextGenerator extends React.Component {
                 icon={fishicon} 
                 alt='fish text button'
             />
-
         )
     }
+
+    // const themeData = React.useContext(ThemeContext);
+    // let buttonColor
+    // themeData.id === 0 ? buttonColor = 'red' : buttonColor = '#b10000'
+
+
+    // textGen(event) {
+    //     api('standings').request()
+    //         .then((result) => {
+    //             editText(result.text)
+    //         })
+    //         .catch(() => {
+    //             console.log('Error in server request')
+    //             // showPopupMessage(event.clientX, event.clientY, 'Ошибка запроса к серверу fish-text.ru', 'red')
+    //         })
+    // }
+
+
+
+    // constructor(props) {
+    //     super(props);
+
+    //     this.state = {
+    //         popupWasShown: false
+    //     }
+
+    // }
+
+    // statCount() {
+    //     this.props.onChangeText();
+    // }
+
+
+    // showPopup(event) {
+    //     showPopupMessage(event.clientX, event.clientY, 'генерировать рыбный текст', 'black')
+    //     this.setState({popupWasShown: true})
+    //     setTimeout(() => {
+    //         this.setState({popupWasShown: false})
+    //     }, 60000)
+    // }
+
+    // let showPopupFunc = this.showPopup
+    // if (this.state.popupWasShown === true) {
+    //     showPopupFunc = null;
+    // }
+    
 }
 
 export default TextGenerator;

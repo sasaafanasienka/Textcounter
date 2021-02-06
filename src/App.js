@@ -19,7 +19,7 @@ function App() {
     <ThemeContext.Provider value={themes[theme]}> 
 
       <div className="App">
-          <Header textValue={textValue}/>
+          <Header textValue={textValue} onChangeText={changeText}/>
 
           <Route exact path='/'>
             <Main onChangeTheme={changeTheme} onChangeText={changeText}/>
