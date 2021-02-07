@@ -1,40 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import pasteIcon from '../../images/paste_icon.svg'
+import pasteIconLight from '../../images/paste_icon_light.svg'
+import pasteIconDark from '../../images/paste_icon_dark.svg'
 import { showPopupMessage } from '../../js/utilits'
 import ToolButton from '../ToolButton/ToolButton';
+import { popupColors } from '../../js/constants';
 
-class ToolPaste extends React.Component {
+function ToolPaste(props) {
+   
+    let pasteIcon
+    props.theme === 'light' ? pasteIcon = pasteIconLight : pasteIcon = pasteIconDark
 
-    constructor(props) {
+    function pasteInTextArea(event) {
 
-        super(props);
-        this.pasteInTextArea = this.pasteInTextArea.bind(this);
-        this.state = {};
-    }
-
-    pasteInTextArea(event) {
         navigator.clipboard.readText()
         .then(text => {
             document.querySelector('.text__input').value = text
-            this.props.onChangeText();
+            sendTextToStatCount(text)
         }).then(() => {
             if (document.querySelector('.text__input').value.length === 0) {
-                showPopupMessage(event.clientX, event.clientY, 'ошибка, возможно в буфере находится не текст', 'red')
+                console.log(popupColors.red)
+                showPopupMessage(event.clientX, event.clientY, 'ошибка, возможно в буфере находится не текст', popupColors.red)
             }
         })
     }
-
-    render() {
-        return (
-            <ToolButton 
-                type='paste'
-                icon={pasteIcon}
-                isActive={this.props.isActive}
-                onClick={this.pasteInTextArea}
-            />
-        )
+    
+    function sendTextToStatCount(text) {
+        props.onChangeText(text)
     }
+
+    return (
+    <ToolButton 
+        type='paste'
+        icon={pasteIcon}
+        isActive={props.isActive}
+        onClick={pasteInTextArea}
+    />
+    )
 }
 
 export default ToolPaste;

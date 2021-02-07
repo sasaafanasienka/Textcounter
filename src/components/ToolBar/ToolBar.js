@@ -17,8 +17,8 @@ function ToolBar(props) {
     let themeProp
     themeData.id === 0 ? themeProp = 'light' : themeProp = 'dark' 
 
-    function onChangeText() {
-        props.onChangeText(); //эта строка отправляет данные поля ввода в пропсы maincontent
+    function onChangeText(text) {
+        props.onChangeText(text); //эта строка отправляет данные поля ввода в пропсы maincontent
     }
 
     function onChangeInRecycle() {
@@ -32,22 +32,22 @@ function ToolBar(props) {
 
     let isTextAreaHasContent = true
 
-    // let isClibBoardHasContent = true
+    let isClibBoardHasContent = true
     if (props.textValue.length === 0) {
         isTextAreaHasContent = false
     }
-    // navigator.clipboard.readText()
-    // .then(text => {
-    //     if (text.length === 0) {
-    //         isClibBoardHasContent = false
-    //     }    
-    // })
+    navigator.clipboard.readText()
+    .then(text => {
+        if (text.length === 0) {
+            isClibBoardHasContent = false
+        }    
+    })
     
     return(
         <div className='toolbar'>
             <ToggleTheme onChangeTheme={props.onChangeTheme}/>
             <ToolCopy theme={themeProp} isActive={isTextAreaHasContent} onChangeText={onChangeText}/>
-            {/* <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/> */}
+            <ToolPaste theme={themeProp} isActive={isClibBoardHasContent} onChangeText={onChangeText}/>
             {/* <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} onPopupInit={this.onPopupInit}/> */}
             <PopupMessage />
         </div>

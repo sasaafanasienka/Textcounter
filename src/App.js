@@ -14,6 +14,8 @@ function App() {
   const [theme, changeTheme] = React.useState('dark');
   const [textValue, changeText] = React.useState('');
 
+  console.log(textValue)
+
   return (
     <ThemeContext.Provider value={themes[theme]}> 
 
