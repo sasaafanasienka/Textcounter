@@ -4,8 +4,6 @@ import './header.scss'
 import TextGenerator from '../TextGenerator/TextGenerator';
 import headerLogo from '../../images/logo.svg';
 import headerLogo_dark from '../../images/logo_dark.svg';
-import LocalStorage from '../../js/localStorage';
-
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { themeClassName } from '../../js/utilits/themeClassName';
 
@@ -22,7 +20,6 @@ function Header(props) {
             <img className='header__logo' alt='app logo' src={logoImport} />
             <Stat textValue={props.textValue} />
             <TextGenerator onChangeText={props.onChangeText}/>
-            {/* <RecycleButton itemsInRecycle='1' onChangeInRecycle={'this.onChangeInRecycle'}/> */}
         </header>
         )
 }

@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import './toolbar.scss'
-import EditButton from '../ToolButton/ToolButton';
 import PopupMessage from '../PopupMessage/PopupMessage';
 import ToolPaste from '../ToolPaste/ToolPaste';
 import ToolCopy from '../ToolCopy/ToolCopy';
 import ToolClear from '../ToolClear/ToolClear';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 import { ThemeContext } from '../../contexts/ThemeContext'
-
+import './toolbar.scss'
 
 function ToolBar(props) {
 
