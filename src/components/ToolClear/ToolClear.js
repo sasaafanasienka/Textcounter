@@ -2,13 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import deleteIconLight from '../../images/delete_icon_light.svg'
 import deleteIconDark from '../../images/delete_icon_dark.svg'
-import LocalStorage from '../../js/localStorage'
 import ToolButton from '../ToolButton/ToolButton';
-import { months } from '../../js/constants'
-import Button from '../Button/Button';
-import Popup from '../Popup/Popup';
-
-const newLocalStorage = new LocalStorage();
 
 function ToolClear(props) {
 

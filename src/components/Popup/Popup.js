@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ButtonClosePopup from '../ButtonClosePopup/ButtonClosePopup';
-import PopupTitle from '../PopupTitle/PopupTitle';
 
 import './popup.scss'
 

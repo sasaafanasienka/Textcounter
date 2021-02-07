@@ -6,8 +6,6 @@ import './main.scss'
 import ToolBar from '../ToolBar/ToolBar';
 import TextGenerator from '../TextGenerator/TextGenerator';
 import headerLogo from '../../images/logo.svg';
-import RecycleButton from '../RecycleButton/RecycleButton';
-import RecycleBin from '../RecycleBin/RecycleBin';
 import LocalStorage from '../../js/localStorage';
 import Footer from '../Footer/Footer'
 import Popup from '../Popup/Popup';

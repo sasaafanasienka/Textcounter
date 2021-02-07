@@ -4,7 +4,6 @@ import './header.scss'
 import TextGenerator from '../TextGenerator/TextGenerator';
 import headerLogo from '../../images/logo.svg';
 import headerLogo_dark from '../../images/logo_dark.svg';
-import RecycleButton from '../RecycleButton/RecycleButton';
 import LocalStorage from '../../js/localStorage';
 
 import { ThemeContext } from '../../contexts/ThemeContext'
