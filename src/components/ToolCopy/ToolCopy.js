@@ -4,6 +4,7 @@ import copyIconLight from '../../images/copy_icon_light.svg'
 import copyIconDark from '../../images/copy_icon_dark.svg'
 import { showPopupMessage } from '../../js/utilits'
 import ToolButton from '../ToolButton/ToolButton';
+import { popupColors } from '../../js/constants';
 
 function ToolCopy(props) {
 
@@ -13,7 +14,7 @@ function ToolCopy(props) {
     function copyTextArea(event) {
         const text = document.querySelector('.text__input').value
         navigator.clipboard.writeText(text);
-        // showPopupMessage(event.clientX, event.clientY, 'Скопировано в буфер', 'green')
+        showPopupMessage(event.clientX, event.clientY, 'Скопировано в буфер', popupColors.green)
     }
 
     return (

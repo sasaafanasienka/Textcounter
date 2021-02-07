@@ -49,7 +49,7 @@ function ToolBar(props) {
             <ToolCopy theme={themeProp} isActive={isTextAreaHasContent} onChangeText={onChangeText}/>
             {/* <ToolPaste isActive={isClibBoardHasContent} onChangeText={this.onChangeText}/> */}
             {/* <ToolClear isActive={isTextAreaHasContent} onChangeText={this.onChangeText} onChangeInRecycle={this.onChangeInRecycle} onPopupInit={this.onPopupInit}/> */}
-            {/* <PopupMessage /> */}
+            <PopupMessage />
         </div>
     )
 }

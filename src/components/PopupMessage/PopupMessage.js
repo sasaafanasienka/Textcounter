@@ -1,24 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ThemeContext } from '../../contexts/ThemeContext'
+import { themeClassName } from '../../js/utilits/themeClassName';
 
 import './popup-message.scss'
 
-class PopupMessage extends React.Component {
+function PopupMessage() {
 
-    constructor(props) {
+    const themeData = React.useContext(ThemeContext);
+    const messageClassName = themeClassName(themeData, 'popup-message')
 
-        super(props);
-
-        this.state = {
-
-        };
-    }
-
-    render() {
-        return(
-        <p className='popup-message popup-message_unactive'></p>
-        )
-    }
+    return(
+    <p className={`${messageClassName} popup-message_unactive`}></p>
+    )
 }
 
 export default PopupMessage;

@@ -1,11 +1,13 @@
+@import '../../styles/variables.scss';
+
 .popup-message {
     position: fixed;
 
     width: 200px;
 
-    background-color: white; 
+    background-color: $backgroundColorLight; 
     box-shadow: 4px 4px 40px -15px rgba(0,0,0,0.7);
-    color: black;
+    // color: $textColorLight;
 
     font-family: Gilroy;
     font-weight: 600;
@@ -19,6 +21,11 @@
     z-index: 10000
 }
 
+.popup-message_dark {
+    background-color: $backgroundColorDark; 
+    color: $textColorDark;
+}
+
 .popup-message_unactive {
     display: none;
 }
@@ -26,7 +33,6 @@
 .popup-message_active {
     opacity: 0;
     animation: opacityChanging 3s 1;
-    // background-color: red;
 }
 
 @keyframes opacityChanging {
