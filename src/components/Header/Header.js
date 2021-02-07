@@ -14,7 +14,6 @@ function Header(props) {
     let logoImport
     themeData.id === 0 ? logoImport = headerLogo : logoImport = headerLogo_dark
 
-
     return(
         <header className={classNameByTheme}>
             <img className='header__logo' alt='app logo' src={logoImport} />

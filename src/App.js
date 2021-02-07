@@ -8,22 +8,29 @@ import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 
 import { ThemeContext, themes } from './contexts/ThemeContext'
+import { LocalStorage } from './js/localStorage';
 
 function App() {
 
-  const [theme, changeTheme] = React.useState('dark');
+  const defaultTheme = new LocalStorage()
+  const theme = defaultTheme.check()
+
+  const [themeToUse, changeTheme] = React.useState(theme);
   const [textValue, changeText] = React.useState('');
 
-  console.log(textValue)
+  function rememberTheme(newTheme) {
+    changeTheme(newTheme)
+    defaultTheme.set(newTheme)
+  }
 
   return (
-    <ThemeContext.Provider value={themes[theme]}> 
+    <ThemeContext.Provider value={themes[themeToUse]}>
 
       <div className="App">
           <Header textValue={textValue} onChangeText={changeText}/>
 
           <Route exact path='/'>
-            <Main textValue={textValue} onChangeTheme={changeTheme} onChangeText={changeText}/>
+            <Main textValue={textValue} onChangeTheme={rememberTheme} onChangeText={changeText}/>
           </Route>
 
           <Route path='/about'>
@@ -34,6 +41,7 @@ function App() {
             <Redirect to="/" />
           </Route>
       </div>
+      
     </ThemeContext.Provider>
   );
 }
