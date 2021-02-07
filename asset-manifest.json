@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Textcounter/static/css/main.2aa14f5a.chunk.css",
-    "main.js": "/Textcounter/static/js/main.4581e1df.chunk.js",
-    "main.js.map": "/Textcounter/static/js/main.4581e1df.chunk.js.map",
-    "runtime-main.js": "/Textcounter/static/js/runtime-main.9becb2c2.js",
-    "runtime-main.js.map": "/Textcounter/static/js/runtime-main.9becb2c2.js.map",
-    "static/js/2.50e68c58.chunk.js": "/Textcounter/static/js/2.50e68c58.chunk.js",
-    "static/js/2.50e68c58.chunk.js.map": "/Textcounter/static/js/2.50e68c58.chunk.js.map",
-    "static/js/3.6875a555.chunk.js": "/Textcounter/static/js/3.6875a555.chunk.js",
-    "static/js/3.6875a555.chunk.js.map": "/Textcounter/static/js/3.6875a555.chunk.js.map",
+    "main.css": "/Textcounter/static/css/main.fe031b7d.chunk.css",
+    "main.js": "/Textcounter/static/js/main.c899a586.chunk.js",
+    "main.js.map": "/Textcounter/static/js/main.c899a586.chunk.js.map",
+    "runtime-main.js": "/Textcounter/static/js/runtime-main.591db928.js",
+    "runtime-main.js.map": "/Textcounter/static/js/runtime-main.591db928.js.map",
+    "static/js/2.637f0372.chunk.js": "/Textcounter/static/js/2.637f0372.chunk.js",
+    "static/js/2.637f0372.chunk.js.map": "/Textcounter/static/js/2.637f0372.chunk.js.map",
+    "static/js/3.fa510199.chunk.js": "/Textcounter/static/js/3.fa510199.chunk.js",
+    "static/js/3.fa510199.chunk.js.map": "/Textcounter/static/js/3.fa510199.chunk.js.map",
     "index.html": "/Textcounter/index.html",
-    "static/css/main.2aa14f5a.chunk.css.map": "/Textcounter/static/css/main.2aa14f5a.chunk.css.map",
-    "static/js/2.50e68c58.chunk.js.LICENSE.txt": "/Textcounter/static/js/2.50e68c58.chunk.js.LICENSE.txt",
+    "static/css/main.fe031b7d.chunk.css.map": "/Textcounter/static/css/main.fe031b7d.chunk.css.map",
+    "static/js/2.637f0372.chunk.js.LICENSE.txt": "/Textcounter/static/js/2.637f0372.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Textcounter/static/media/Gilroy-Thin.4b118de0.woff",
     "static/media/avatar.d9df8d24.jpg": "/Textcounter/static/media/avatar.d9df8d24.jpg",
-    "static/media/close.1287881a.svg": "/Textcounter/static/media/close.1287881a.svg",
     "static/media/copy_icon_dark.2bd53001.svg": "/Textcounter/static/media/copy_icon_dark.2bd53001.svg",
     "static/media/copy_icon_light.b7b0ee85.svg": "/Textcounter/static/media/copy_icon_light.b7b0ee85.svg",
     "static/media/darktheme_icon.5712200e.svg": "/Textcounter/static/media/darktheme_icon.5712200e.svg",
-    "static/media/delete_icon.7a2212e7.svg": "/Textcounter/static/media/delete_icon.7a2212e7.svg",
+    "static/media/delete_icon_dark.a62aca89.svg": "/Textcounter/static/media/delete_icon_dark.a62aca89.svg",
+    "static/media/delete_icon_light.db3a8767.svg": "/Textcounter/static/media/delete_icon_light.db3a8767.svg",
     "static/media/fish.51d9f3be.svg": "/Textcounter/static/media/fish.51d9f3be.svg",
     "static/media/lighttheme_icon.e321a497.svg": "/Textcounter/static/media/lighttheme_icon.e321a497.svg",
     "static/media/logo.4a5d448b.svg": "/Textcounter/static/media/logo.4a5d448b.svg",
@@ -31,13 +31,13 @@
     "static/media/logo_linkedin_light.89ce2e72.svg": "/Textcounter/static/media/logo_linkedin_light.89ce2e72.svg",
     "static/media/logo_telegram_dark.8e95b74e.svg": "/Textcounter/static/media/logo_telegram_dark.8e95b74e.svg",
     "static/media/logo_telegram_light.c3f7acaa.svg": "/Textcounter/static/media/logo_telegram_light.c3f7acaa.svg",
-    "static/media/paste_icon.661daeb2.svg": "/Textcounter/static/media/paste_icon.661daeb2.svg",
-    "static/media/recycle.e52d6c54.svg": "/Textcounter/static/media/recycle.e52d6c54.svg"
+    "static/media/paste_icon_dark.f6ac4c9b.svg": "/Textcounter/static/media/paste_icon_dark.f6ac4c9b.svg",
+    "static/media/paste_icon_light.18612f4a.svg": "/Textcounter/static/media/paste_icon_light.18612f4a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9becb2c2.js",
-    "static/js/2.50e68c58.chunk.js",
-    "static/css/main.2aa14f5a.chunk.css",
-    "static/js/main.4581e1df.chunk.js"
+    "static/js/runtime-main.591db928.js",
+    "static/js/2.637f0372.chunk.js",
+    "static/css/main.fe031b7d.chunk.css",
+    "static/js/main.c899a586.chunk.js"
   ]
 }
