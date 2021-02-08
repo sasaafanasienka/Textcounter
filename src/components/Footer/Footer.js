@@ -32,7 +32,7 @@ function Footer() {
 
   return (
     <div className="footer">
-      <a className='footer__link' href="./about"><p className={textClassName}>&copy; Александр Афанасенко, 2021 | Об авторе</p></a>
+      <a className='footer__link' href="./Textcounter/about"><p className={textClassName}>&copy; Александр Афанасенко, 2021 | Об авторе</p></a>
       <div className='footer__social-links'>
         <a className='footer__icon-link' href="https://www.facebook.com/sasaafanasienka">
             <img src={facebookLogo} alt="Facebook logo" />

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './App.scss';
 import AboutAuthor from './components/AboutAuthor/AboutAuthor';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, useRouteMatch } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 
@@ -27,19 +27,17 @@ function App() {
     <ThemeContext.Provider value={themes[themeToUse]}>
 
       <div className="App">
-          <Header textValue={textValue} onChangeText={changeText}/>
 
-          <Route exact path='/'>
-            <Main textValue={textValue} onChangeTheme={rememberTheme} onChangeText={changeText}/>
-          </Route>
+            <Route exact path='/Textcounter'>
+              <Header textValue={textValue} onChangeText={changeText} onlyLogo={false}/> 
+              <Main textValue={textValue} onChangeTheme={rememberTheme} onChangeText={changeText}/>
+            </Route>
 
-          <Route path='/about'>
-            <AboutAuthor />
-          </Route>
+            <Route path='/Textcounter/about'>
+              <Header onlyLogo={true}/> 
+              <AboutAuthor />
+            </Route>
 
-          <Route path="*">
-            <Redirect to="/" />
-          </Route>
       </div>
       
     </ThemeContext.Provider>
