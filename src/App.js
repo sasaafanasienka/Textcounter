@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './App.scss';
-import AboutAuthor from './components/AboutAuthor/AboutAuthor';
 import { Route, useRouteMatch } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 
 import { ThemeContext, themes } from './contexts/ThemeContext'
 import { LocalStorage } from './js/localStorage';
+import About from './components/About/About';
 
 function App() {
 
@@ -33,9 +33,14 @@ function App() {
               <Main textValue={textValue} onChangeTheme={rememberTheme} onChangeText={changeText}/>
             </Route>
 
-            <Route path='/Textcounter/about'>
+            <Route path='/Textcounter/about-author'>
               <Header onlyLogo={true}/> 
-              <AboutAuthor />
+              <About content='about-author'/>
+            </Route>
+
+            <Route path='/Textcounter/about-project'>
+              <Header onlyLogo={true}/> 
+              <About content='about-project'/>
             </Route>
 
       </div>

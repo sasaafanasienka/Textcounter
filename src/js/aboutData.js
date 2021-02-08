@@ -1,0 +1,30 @@
+export const aboutData = {
+    'about-author': {
+        title: 'Александр Афанасенко',
+        subtitle: 'junior frontend-разработчик',
+        minisubtitle1: '',
+        text1: 'Привет! Меня зовут Саша, и я — автор проекта TextCounter, который вы видите на своем экране.',
+        minisubtitle2: 'Умения:',
+        text2: 'HTML, CSS(SCSS), JS, React. Photoshop, Illustrator',
+        minisubtitle3: 'Образование',
+        text3: '2020: Курс Яндекс.Практикумпо профессии «Фронтенд-разработчик». 2007-2013: Строительный факультет БНТУ по специальности «Промышленное и гражданское строительство»',
+        minisubtitle4: 'Опыт работы:',
+        text4: '2013 — 2021: дизайнер-верстальщик газеты «Прессбол»',
+        minisubtitle5: '',
+        text5: '',
+    },
+    'about-project': {
+        title: 'TextCounter',
+        subtitle: 'Приложение для подсчета количества символов и генерирования "рыбного" текста',
+        minisubtitle1: '',
+        text1: 'Перед вами учебный проект, на примере которого я изучал React, scss и другие технологии. Идея приложения возникла еще на прошлой работе: подсчет количества знаков типичная задача для верстальщика',
+        minisubtitle2: 'Технологии:',
+        text2: 'HTML, CSS(SCSS), JS, React. React.Context — для смены темы офрмления. Axios — для запроса к серверу генерирования "рыбного" текста. React.Router. Также приложение взаимодействует с localStorage',
+        minisubtitle3: '',
+        text3: '',
+        minisubtitle4: '',
+        text4: '',
+        minisubtitle5: '',
+        text5: '',
+    }
+}   

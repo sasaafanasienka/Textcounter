@@ -11,6 +11,7 @@ import telegramLogoDark from '../../images/logo_telegram_dark.svg'
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { themeClassName } from '../../js/utilits/themeClassName';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const themeData = React.useContext(ThemeContext);
@@ -32,7 +33,7 @@ function Footer() {
 
   return (
     <div className="footer">
-      <a className='footer__link' href="./Textcounter/about"><p className={textClassName}>&copy; Александр Афанасенко, 2021 | Об авторе</p></a>
+      <Link className='footer__link' to="./Textcounter/about-author"><p className={textClassName}>&copy; Александр Афанасенко, 2021 | Об авторе</p></Link>
       <div className='footer__social-links'>
         <a className='footer__icon-link' href="https://www.facebook.com/sasaafanasienka">
             <img src={facebookLogo} alt="Facebook logo" />

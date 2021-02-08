@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.about__mini-subtitle {
+    color: $textColorLight;
+    width: 100%;
+    text-align: left;
+
+    margin-top: 10px;
+
+    font-family: Gilroy;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+
+.about__mini-subtitle_dark {
+    color: $textColorDark;
+}

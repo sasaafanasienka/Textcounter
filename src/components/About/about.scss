@@ -1,0 +1,35 @@
+@import './__avatar/about__avatar.scss';
+@import './__title/about__title.scss';
+@import './__text/about__text.scss';
+@import './__subtitle/about__subtitle.scss';
+@import './__mini-subtitle/about__mini-subtitle.scss';
+@import './__text-container/about__text-container.scss';
+@import '../../styles/variables.scss';
+
+.about {
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 120px 120px 20px 120px;
+    box-sizing: border-box;
+    background-color: $backgroundColorLight;
+}
+
+.about_dark {
+    background-color: $backgroundColorDark;
+}
+
+@media (max-width: 1023px) {
+    .about {
+        padding: 120px 60px 20px 60px
+    }
+}
+
+@media (max-width: 567px) {
+    .about {
+        padding: 110px 60px 20px 20px;
+     }
+}

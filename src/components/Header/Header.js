@@ -6,7 +6,7 @@ import headerLogo from '../../images/logo.svg';
 import headerLogo_dark from '../../images/logo_dark.svg';
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { themeClassName } from '../../js/utilits/themeClassName';
-import { Route, Link, useRouteMatch } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 function Header(props) {
 
