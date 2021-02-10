@@ -24,7 +24,7 @@ function Header(props) {
     } else {
         return(
             <header className={classNameByTheme}>
-                <Link to={`/Textcounter`}><img className='header__logo' alt='app logo' src={logoImport} /></Link>
+                <Link to={`/`}><img className='header__logo' alt='app logo' src={logoImport} /></Link>
                 <Stat textValue={props.textValue} />
                 <TextGenerator onChangeText={props.onChangeText}/>
             </header>

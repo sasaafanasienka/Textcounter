@@ -17,3 +17,11 @@
 .about__text_dark {
     color: $textColorDark;
 }
+
+
+@media (max-width: 379px) {
+    .about__text {
+        font-size: 16px;
+        line-height: 21px;
+    }
+}

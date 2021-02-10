@@ -17,3 +17,10 @@
 .about__mini-subtitle_dark {
     color: $textColorDark;
 }
+
+@media (max-width: 379px) {
+    .about__mini-subtitle {
+        font-size: 22px;
+        line-height: 22px;
+    }
+}

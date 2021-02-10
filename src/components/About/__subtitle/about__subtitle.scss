@@ -17,3 +17,10 @@
 .about__subtitle_dark {
     color: $textColorDark;
 }
+
+@media (max-width: 379px) {
+    .about__subtitle {
+        font-size: 26px;
+        line-height: 26px;
+    }
+}
