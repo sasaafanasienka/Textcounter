@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.about__text {
+    color: $textColorLight;
+    width: 100%;
+    text-align: left;
+
+    margin-top: 10px;
+
+    font-family: Gilroy;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 1px;
+}
+
+.about__text_dark {
+    color: $textColorDark;
+}

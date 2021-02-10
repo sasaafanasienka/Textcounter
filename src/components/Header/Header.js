@@ -18,7 +18,7 @@ function Header(props) {
     if (props.onlyLogo) { 
         return(
             <header className={classNameByTheme}>
-                <Link to={`/Textcounter`}><img className='header__logo' alt='app logo' src={logoImport} /></Link>
+                <Link to={`/`}><img className='header__logo' alt='app logo' src={logoImport} /></Link>
             </header>
         )
     } else {

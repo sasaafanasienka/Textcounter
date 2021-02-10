@@ -8,7 +8,7 @@ import './styles/variables.scss'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter> 
+    <BrowserRouter basename="/Textcounter"> 
       <App />
     </BrowserRouter>
   </React.StrictMode>,

@@ -32,7 +32,7 @@ function About(props) {
                 <p className={themeClassName(themeData, 'about__text')}>{data.text4}</p>
                 <h2 className={themeClassName(themeData, 'about__mini-subtitle')}>{data.minisubtitle5}</h2>
                 <p className={themeClassName(themeData, 'about__text')}>{data.text5}</p>
-                <Link to="/TextCounter" className='footer__link'>
+                <Link to="/" className='footer__link'>
                     <p className={themeClassName(themeData, 'footer__text')}>назад</p>
                 </Link>
             </div>

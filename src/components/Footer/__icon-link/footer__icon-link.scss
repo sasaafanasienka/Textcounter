@@ -7,11 +7,11 @@
     margin-right: 0;
 }
 
-.footer :active, :focus {
+.footer__icon-link :active, :focus {
     border: none; 
     // outline: none; 
 }
 
-.footer :hover {
+.footer__icon-link :hover {
     opacity: .85
 }

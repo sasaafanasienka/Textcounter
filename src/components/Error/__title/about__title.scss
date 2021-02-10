@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.about__title {
+    color: $textColorLight;
+    width: 100%;
+    text-align: left;
+
+    margin-top: 10px;
+
+    font-family: Gilroy;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 1px;
+}
+
+.about__title_dark {
+    color: $textColorDark;
+}

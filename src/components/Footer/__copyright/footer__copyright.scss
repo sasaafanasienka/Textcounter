@@ -1,3 +1,9 @@
 .footer__copyright {
     display: flex;
 }
+
+@media (max-width: 800px) {
+    .footer__copyright {
+        display: none;
+    }
+}

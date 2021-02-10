@@ -32,8 +32,12 @@ function Footer() {
 
 
   return (
-    <div className="footer">
-      <Link className='footer__link' to="./Textcounter/about-author"><p className={textClassName}>&copy; Александр Афанасенко, 2021 | Об авторе</p></Link>
+    <footer className="footer">
+      <div className='footer__text-links'>
+        <p className={`${textClassName} footer__copyright`}>&copy; Александр Афанасенко, 2021</p>
+        <Link className='footer__link' to="/about-author"><p className={textClassName}>Об авторе</p></Link>
+        <Link className='footer__link' to="/about-project"><p className={textClassName}>О проекте</p></Link>
+      </div>
       <div className='footer__social-links'>
         <a className='footer__icon-link' href="https://www.facebook.com/sasaafanasienka">
             <img src={facebookLogo} alt="Facebook logo" />
@@ -48,7 +52,7 @@ function Footer() {
             <img src={telegramLogo} alt="telegram logo" />
         </a>
       </div>
-    </div>
+    </footer>
   );
 }
 

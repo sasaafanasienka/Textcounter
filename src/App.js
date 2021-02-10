@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './App.scss';
-import { Route, useRouteMatch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 
 import { ThemeContext, themes } from './contexts/ThemeContext'
 import { LocalStorage } from './js/localStorage';
 import About from './components/About/About';
+import Error from './components/Error/Error';
 
 function App() {
 
@@ -28,20 +29,25 @@ function App() {
 
       <div className="App">
 
-            <Route exact path='/Textcounter'>
-              <Header textValue={textValue} onChangeText={changeText} onlyLogo={false}/> 
-              <Main textValue={textValue} onChangeTheme={rememberTheme} onChangeText={changeText}/>
-            </Route>
+        <Route exact path='/'>
+          <Header textValue={textValue} onChangeText={changeText} onlyLogo={false}/> 
+          <Main textValue={textValue} onChangeTheme={rememberTheme} onChangeText={changeText}/>
+        </Route>
 
-            <Route path='/Textcounter/about-author'>
-              <Header onlyLogo={true}/> 
-              <About content='about-author'/>
-            </Route>
+        <Route path='/about-author'>
+          <Header onlyLogo={true}/> 
+          <About content='about-author'/>
+        </Route>
 
-            <Route path='/Textcounter/about-project'>
-              <Header onlyLogo={true}/> 
-              <About content='about-project'/>
-            </Route>
+        <Route path='/about-project'>
+          <Header onlyLogo={true}/> 
+          <About content='about-project'/>
+        </Route>
+
+        <Route path='*'>
+          <Header onlyLogo={true}/> 
+          <Error/>
+        </Route>
 
       </div>
       
