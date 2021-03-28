@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { showPopupMessage } from '../../js/utilits'
 import fishicon from '../../images/fish.svg'
-import Button from '../Button/Button'
 import axios from 'axios'
+import Button from '../Button/Button';
 // import { ThemeContext } from '../../contexts/ThemeContext'
 
 // const api = (template) => new Api(template);
@@ -57,52 +57,6 @@ class TextGenerator extends React.Component {
             />
         )
     }
-
-    // const themeData = React.useContext(ThemeContext);
-    // let buttonColor
-    // themeData.id === 0 ? buttonColor = 'red' : buttonColor = '#b10000'
-
-
-    // textGen(event) {
-    //     api('standings').request()
-    //         .then((result) => {
-    //             editText(result.text)
-    //         })
-    //         .catch(() => {
-    //             console.log('Error in server request')
-    //             // showPopupMessage(event.clientX, event.clientY, 'Ошибка запроса к серверу fish-text.ru', 'red')
-    //         })
-    // }
-
-
-
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         popupWasShown: false
-    //     }
-
-    // }
-
-    // statCount() {
-    //     this.props.onChangeText();
-    // }
-
-
-    // showPopup(event) {
-    //     showPopupMessage(event.clientX, event.clientY, 'генерировать рыбный текст', 'black')
-    //     this.setState({popupWasShown: true})
-    //     setTimeout(() => {
-    //         this.setState({popupWasShown: false})
-    //     }, 60000)
-    // }
-
-    // let showPopupFunc = this.showPopup
-    // if (this.state.popupWasShown === true) {
-    //     showPopupFunc = null;
-    // }
-    
 }
 
 export default TextGenerator;
