@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import Text from '../Text/Text';
 import ToolBar from '../ToolBar/ToolBar';
 import Footer from '../Footer/Footer'
-import { themeClassName } from '../../js/utilits/themeClassName';
-import { ThemeContext } from '../../contexts/ThemeContext'
+import { themeClassNameGen } from '../../js/utilits/themeClassNameGen';
+import { connect } from 'react-redux';
 import './main.scss'
 
 function Main(props) {
 
-    const themeData = React.useContext(ThemeContext);
-    const mainClassName = themeClassName(themeData, 'main')
+    const mainClassName = themeClassNameGen(props.theme, 'main')
 
     return(
         <div className={mainClassName}>
@@ -22,4 +21,10 @@ function Main(props) {
 
 }
 
-export default Main;
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme
+    }
+  }
+  
+export default connect(mapStateToProps)(Main);

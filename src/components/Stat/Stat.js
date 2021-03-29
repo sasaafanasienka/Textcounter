@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import './stat.scss'
 import '../../styles/main.scss'
 import { rightWord } from '../../js/utilits/rightWord'
-import { ThemeContext } from '../../contexts/ThemeContext'
-import { themeClassName } from '../../js/utilits/themeClassName';
+import { themeClassNameGen } from '../../js/utilits/themeClassNameGen';
+import { connect } from 'react-redux';
 
 function Stat(props) {
 
-    const themeData = React.useContext(ThemeContext);
-    const numbersClassName = themeClassName(themeData, 'stat__number')
+    const numbersClassName = themeClassNameGen(props.theme, 'stat__number')
 
     function symbolsCount() {
         const text = props.textValue
@@ -43,4 +42,10 @@ function Stat(props) {
 
 }
 
-export default Stat;
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme
+    }
+}
+
+export default connect(mapStateToProps)(Stat);

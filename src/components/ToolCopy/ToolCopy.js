@@ -5,6 +5,7 @@ import copyIconDark from '../../images/copy_icon_dark.svg'
 import { showPopupMessage } from '../../js/utilits'
 import ToolButton from '../ToolButton/ToolButton';
 import { popupColors } from '../../js/constants';
+import { connect } from 'react-redux';
 
 function ToolCopy(props) {
 
@@ -24,8 +25,14 @@ function ToolCopy(props) {
             isActive={props.isActive}
             onClick={copyTextArea}
         />
-    )
+        )
+        
+}
     
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme
+    }
 }
 
-export default ToolCopy;
+export default connect(mapStateToProps)(ToolCopy);

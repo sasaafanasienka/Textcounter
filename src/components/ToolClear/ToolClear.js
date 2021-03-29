@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import deleteIconLight from '../../images/delete_icon_light.svg'
 import deleteIconDark from '../../images/delete_icon_dark.svg'
 import ToolButton from '../ToolButton/ToolButton';
+import { connect } from 'react-redux';
 
 function ToolClear(props) {
 
@@ -24,4 +25,10 @@ function ToolClear(props) {
     )
 }
 
-export default ToolClear;
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme
+    }
+}
+
+export default connect(mapStateToProps)(ToolClear);

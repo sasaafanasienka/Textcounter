@@ -5,14 +5,9 @@ import ToolPaste from '../ToolPaste/ToolPaste';
 import ToolCopy from '../ToolCopy/ToolCopy';
 import ToolClear from '../ToolClear/ToolClear';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
-import { ThemeContext } from '../../contexts/ThemeContext'
 import './toolbar.scss'
 
 function ToolBar(props) {
-
-    const themeData = React.useContext(ThemeContext);
-    let themeProp
-    themeData.id === 0 ? themeProp = 'light' : themeProp = 'dark' 
 
     function onChangeText(text) {
         props.onChangeText(text); //эта строка отправляет данные поля ввода в пропсы maincontent
@@ -43,9 +38,9 @@ function ToolBar(props) {
     return(
         <div className='toolbar'>
             <ToggleTheme />
-            <ToolCopy theme={themeProp} isActive={isTextAreaHasContent} onChangeText={onChangeText}/>
-            <ToolPaste theme={themeProp} isActive={isClibBoardHasContent} onChangeText={onChangeText}/>
-            <ToolClear theme={themeProp} isActive={isTextAreaHasContent} onChangeText={onChangeText} onChangeInRecycle={onChangeInRecycle} onPopupInit={onPopupInit}/>
+            <ToolCopy isActive={isTextAreaHasContent} onChangeText={onChangeText}/>
+            <ToolPaste isActive={isClibBoardHasContent} onChangeText={onChangeText}/>
+            <ToolClear isActive={isTextAreaHasContent} onChangeText={onChangeText} onChangeInRecycle={onChangeInRecycle} onPopupInit={onPopupInit}/>
             <PopupMessage />
         </div>
     )

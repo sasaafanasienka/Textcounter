@@ -1,13 +1,18 @@
+import LocalStorage from "../js/localStorage"
 import { TOGGLE_THEME } from "./types"
 
+const localStorage = new LocalStorage()
+
 const initialState = {
-    theme: 'light'
+    theme: localStorage.check()
 }
 
 export const themeReducer = (state = initialState, action) => {
     switch(action.type) {
         case TOGGLE_THEME:
-            return state.theme === 'light' ? {theme: 'dark'} : {theme: 'light'}
+            const newTheme = state.theme === 'light' ? 'dark' : 'light'
+            localStorage.set(newTheme)
+            return {theme: newTheme}
         default:
             return state
     }

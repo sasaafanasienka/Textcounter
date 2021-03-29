@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import ToolButton from '../ToolButton/ToolButton';
-import darkThemeIcon from '../../images/darktheme_icon.svg'
-import lightThemeIcon from '../../images/lighttheme_icon.svg'
+import switchToDark from '../../images/darktheme_icon.svg'
+import switchToLight from '../../images/lighttheme_icon.svg'
 import { connect } from 'react-redux';
 import { toggleTheme } from '../../redux/actions';
 
 function ToggleTheme(props) {
 
-    const icon = props.theme === 'light' ? lightThemeIcon : darkThemeIcon
+    const icon = props.theme === 'light' ? switchToDark : switchToLight
 
     function toggle() {
         props.toggleTheme()

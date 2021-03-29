@@ -5,6 +5,7 @@ import pasteIconDark from '../../images/paste_icon_dark.svg'
 import { showPopupMessage } from '../../js/utilits'
 import ToolButton from '../ToolButton/ToolButton';
 import { popupColors } from '../../js/constants';
+import { connect } from 'react-redux';
 
 function ToolPaste(props) {
    
@@ -39,4 +40,10 @@ function ToolPaste(props) {
     )
 }
 
-export default ToolPaste;
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme
+    }
+}
+
+export default connect(mapStateToProps)(ToolPaste);

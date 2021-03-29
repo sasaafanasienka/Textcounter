@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './text.scss'
 
-import { ThemeContext } from '../../contexts/ThemeContext';
-import { themeClassName } from '../../js/utilits/themeClassName';
+import { themeClassNameGen } from '../../js/utilits/themeClassNameGen';
+import { connect } from 'react-redux';
 
 function Text(props) {
 
-    const themeData = React.useContext(ThemeContext);
-    const inputClassName = themeClassName(themeData, 'text__input')
+    const inputClassName = themeClassNameGen(props.theme, 'text__input')
 
     function sendTextToStatCount() {
         props.onChangeText(document.querySelector('.text__input').value)
@@ -24,4 +23,10 @@ function Text(props) {
     )
 }
 
-export default Text;
+const mapStateToData = state => {
+    return {
+        theme: state.theme.theme
+    }
+}
+
+export default connect(mapStateToData)(Text);

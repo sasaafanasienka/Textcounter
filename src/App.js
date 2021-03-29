@@ -5,28 +5,14 @@ import './App.scss';
 import { Route, Switch } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
-
-import { ThemeContext, themes } from './contexts/ThemeContext'
-import { LocalStorage } from './js/localStorage';
 import About from './components/About/About';
 import Error from './components/Error/Error';
 
 function App() {
 
-  const defaultTheme = new LocalStorage()
-  const theme = defaultTheme.check()
-
-  const [themeToUse, changeTheme] = React.useState(theme);
   const [textValue, changeText] = React.useState('');
 
-  function rememberTheme(newTheme) {
-    changeTheme(newTheme)
-    defaultTheme.set(newTheme)
-  }
-
   return (
-    <ThemeContext.Provider value={themes[themeToUse]}>
-
       <div className="App">
 
         <Switch>
@@ -55,7 +41,6 @@ function App() {
 
       </div>
       
-    </ThemeContext.Provider>
   );
 }
 

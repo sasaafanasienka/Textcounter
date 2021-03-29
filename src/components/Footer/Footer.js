@@ -9,16 +9,15 @@ import githubLogoDark from '../../images/logo_github_dark.svg'
 import linkedinLogoDark from '../../images/logo_linkedin_dark.svg'
 import telegramLogoDark from '../../images/logo_telegram_dark.svg'
 
-import { ThemeContext } from '../../contexts/ThemeContext';
-import { themeClassName } from '../../js/utilits/themeClassName';
+import { themeClassNameGen } from '../../js/utilits/themeClassNameGen';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function Footer() {
-  const themeData = React.useContext(ThemeContext);
+function Footer(props) {
 
-  const textClassName = themeClassName(themeData, 'footer__text')
+  const textClassName = themeClassNameGen(props.theme, 'footer__text')
   let facebookLogo, githubLogo, linkedinLogo, telegramLogo
-  if (themeData.id === 0) {
+  if (props.theme === 'light') {
     facebookLogo = facebookLogoLight
     githubLogo = githubLogoLight
     linkedinLogo = linkedinLogoLight
@@ -29,7 +28,6 @@ function Footer() {
     linkedinLogo = linkedinLogoDark
     telegramLogo = telegramLogoDark
   }
-
 
   return (
     <footer className="footer">
@@ -56,4 +54,10 @@ function Footer() {
   );
 }
 
-export default Footer;
+const mapStateToProps = state => {
+  return {
+      theme: state.theme.theme
+  }
+}
+
+export default connect(mapStateToProps)(Footer);
