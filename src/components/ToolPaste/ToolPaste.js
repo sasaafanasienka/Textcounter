@@ -6,37 +6,40 @@ import { showPopupMessage } from '../../js/utilits'
 import ToolButton from '../ToolButton/ToolButton';
 import { popupColors } from '../../js/constants';
 import { connect } from 'react-redux';
+import { changeText } from '../../redux/actions';
 
 function ToolPaste(props) {
    
-    let pasteIcon
-    props.theme === 'light' ? pasteIcon = pasteIconLight : pasteIcon = pasteIconDark
+    const pasteIcon = props.theme === 'light' ? pasteIconLight : pasteIconDark
+
+    let isClibBoardHasContent = true
+  
+    navigator.clipboard.readText()
+        .then(text => {
+            if (text.length === 0) {
+                isClibBoardHasContent = false
+            }    
+        })
 
     function pasteInTextArea(event) {
-
         navigator.clipboard.readText()
-        .then(text => {
-            document.querySelector('.text__input').value = text
-            sendTextToStatCount(text)
-        }).then(() => {
-            if (document.querySelector('.text__input').value.length === 0) {
-                console.log(popupColors.red)
-                showPopupMessage(event.clientX, event.clientY, 'ошибка, возможно в буфере находится не текст', popupColors.red)
-            }
-        })
+            .then(text => {
+                document.querySelector('.text__input').value = text
+                props.changeText(text)
+            }).then(() => {
+                if (document.querySelector('.text__input').value.length === 0) {
+                    showPopupMessage(event.clientX, event.clientY, 'ошибка, возможно в буфере находится не текст', popupColors.red)
+                }
+            })
     }
     
-    function sendTextToStatCount(text) {
-        props.onChangeText(text)
-    }
-
     return (
-    <ToolButton 
-        type='paste'
-        icon={pasteIcon}
-        isActive={props.isActive}
-        onClick={pasteInTextArea}
-    />
+        <ToolButton 
+            type='paste'
+            icon={pasteIcon}
+            isActive={isClibBoardHasContent}
+            onClick={pasteInTextArea}
+        />
     )
 }
 
@@ -46,4 +49,8 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(ToolPaste);
+const mapReduceToProps = {
+    changeText: changeText
+}
+
+export default connect(mapStateToProps, mapReduceToProps)(ToolPaste);

@@ -24,7 +24,7 @@ function Header(props) {
         return(
             <header className={classNameByTheme}>
                 <Link to={`/`}><img className='header__logo' alt='app logo' src={logoImport} /></Link>
-                <Stat textValue={props.textValue} />
+                <Stat />
                 <TextGenerator onChangeText={props.onChangeText}/>
             </header>
         )

@@ -11,13 +11,13 @@ function Stat(props) {
     const numbersClassName = themeClassNameGen(props.theme, 'stat__number')
 
     function symbolsCount() {
-        const text = props.textValue
+        const text = props.text
         return text.length
     }
 
     function wordsCount() {
         const paragraphSymbol = /\n/g
-        const text = props.textValue.toLowerCase().replace(paragraphSymbol, ' ')
+        const text = props.text.toLowerCase().replace(paragraphSymbol, ' ')
         const words = text.split(' ').filter((item) => { //split делает массив из строк разделенных ' '
             return item !== ''  //filter создает новый массив убирая из старого пустые строки
         })
@@ -25,7 +25,7 @@ function Stat(props) {
     }
 
     function paragraphsCount() {
-        const text = props.textValue
+        const text = props.text
         const paragraphs = text.split('\n').filter((item) => { //split делает массив из строк разделенных ' '
             return item !== ''  //filter создает новый массив убирая из старого пустые строки
         })
@@ -44,7 +44,8 @@ function Stat(props) {
 
 const mapStateToProps = state => {
     return {
-        theme: state.theme.theme
+        theme: state.theme.theme,
+        text: state.text.text
     }
 }
 

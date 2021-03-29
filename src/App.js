@@ -10,16 +10,14 @@ import Error from './components/Error/Error';
 
 function App() {
 
-  const [textValue, changeText] = React.useState('');
-
   return (
       <div className="App">
 
         <Switch>
 
           <Route exact path='/'>
-            <Header textValue={textValue} onChangeText={changeText} onlyLogo={false}/> 
-            <Main textValue={textValue} onChangeText={changeText}/>
+            <Header onlyLogo={false}/> 
+            <Main />
           </Route>
 
           <Route path='/about-author'>
