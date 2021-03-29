@@ -4,16 +4,15 @@ import './header.scss'
 import TextGenerator from '../TextGenerator/TextGenerator';
 import headerLogo from '../../images/logo.svg';
 import headerLogo_dark from '../../images/logo_dark.svg';
-import { ThemeContext } from '../../contexts/ThemeContext'
 import { themeClassName } from '../../js/utilits/themeClassName';
 import { Route, Link } from 'react-router-dom';
+import { themeClassNameGen } from '../../js/utilits/themeClassNameGen';
+import { connect } from 'react-redux';
 
 function Header(props) {
 
-    const themeData = React.useContext(ThemeContext);
-    const classNameByTheme = themeClassName(themeData, 'header')
-    let logoImport
-    themeData.id === 0 ? logoImport = headerLogo : logoImport = headerLogo_dark
+    const logoImport = props.theme === 'light' ? headerLogo : headerLogo_dark
+    const classNameByTheme = themeClassNameGen(props.theme, 'header')
 
     if (props.onlyLogo) { 
         return(
@@ -32,4 +31,10 @@ function Header(props) {
     }
 }
 
-export default Header;
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme
+    }
+}
+
+export default connect(mapStateToProps)(Header)

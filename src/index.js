@@ -1,15 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom'; //библиотека для создания маршрутов внутри реакт приложения
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/variables.scss'
 
-ReactDOM.render(
+import { Provider } from 'react-redux'
+import { createStore } from 'redux';
+import { rootReducer } from './redux/rootReducer';
+
+const store = createStore(rootReducer)
+
+render(
   <React.StrictMode>
     <BrowserRouter basename="/Textcounter"> 
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>,
     </BrowserRouter>
   </React.StrictMode>,
 document.getElementById('root')

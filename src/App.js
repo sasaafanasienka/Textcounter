@@ -33,7 +33,7 @@ function App() {
 
           <Route exact path='/'>
             <Header textValue={textValue} onChangeText={changeText} onlyLogo={false}/> 
-            <Main textValue={textValue} onChangeTheme={rememberTheme} onChangeText={changeText}/>
+            <Main textValue={textValue} onChangeText={changeText}/>
           </Route>
 
           <Route path='/about-author'>

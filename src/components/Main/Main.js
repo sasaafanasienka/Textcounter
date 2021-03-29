@@ -15,7 +15,7 @@ function Main(props) {
     return(
         <div className={mainClassName}>
             <Text onChangeText={props.onChangeText}/>
-            <ToolBar textValue={props.textValue} onChangeTheme={props.onChangeTheme} onChangeText={props.onChangeText}/>
+            <ToolBar textValue={props.textValue} onChangeText={props.onChangeText}/>
             <Footer />
         </div>
     )

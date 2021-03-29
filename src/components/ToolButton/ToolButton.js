@@ -18,9 +18,8 @@ class ToolButton extends React.Component {
         } 
 
         return(
-            <button className={className}>
+            <button className={className} onClick={functionToAction}>
                 <img className='tool-button__icon'
-                    onClick={functionToAction}
                     src={this.props.icon} 
                     alt={this.props.type}>
                 </img>

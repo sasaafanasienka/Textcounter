@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import ToolButton from '../ToolButton/ToolButton';
 import darkThemeIcon from '../../images/darktheme_icon.svg'
 import lightThemeIcon from '../../images/lighttheme_icon.svg'
-
-import { ThemeContext } from '../../contexts/ThemeContext'
+import { connect } from 'react-redux';
+import { toggleTheme } from '../../redux/actions';
 
 function ToggleTheme(props) {
 
-    const themeData = React.useContext(ThemeContext)
-    let icon
-    themeData.id === 0 ? icon = darkThemeIcon : icon = lightThemeIcon
+    const icon = props.theme === 'light' ? lightThemeIcon : darkThemeIcon
 
     function toggle() {
-        themeData.id === 0 ? props.onChangeTheme('dark') : props.onChangeTheme('light')  
+        props.toggleTheme()
     }
 
     return(
@@ -26,4 +24,14 @@ function ToggleTheme(props) {
     )
 }
 
-export default ToggleTheme;
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme
+    }
+}
+
+const mapDispatchToProps = {
+    toggleTheme: toggleTheme
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToggleTheme);
