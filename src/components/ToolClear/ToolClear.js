@@ -12,7 +12,6 @@ function ToolClear(props) {
     const isTextAreaHasContent = props.text.length === 0 ? false : true
 
     function clearTextArea() {
-        document.querySelector('.text__input').value = ''
         props.changeText('');
     }
 

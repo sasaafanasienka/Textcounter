@@ -9,22 +9,19 @@ import './main.scss'
 
 function Main(props) {
 
-    const mainClassName = themeClassNameGen(props.theme, 'main')
-
     return(
-        <div className={mainClassName}>
+        <div className={themeClassNameGen(props.theme, 'main')}>
             <Text />
-            <ToolBar textValue={props.textValue} onChangeText={props.onChangeText}/>
+            <ToolBar />
             <Footer />
         </div>
     )
-
 }
 
 const mapStateToProps = state => {
     return {
         theme: state.theme.theme
     }
-  }
+}
   
 export default connect(mapStateToProps)(Main);

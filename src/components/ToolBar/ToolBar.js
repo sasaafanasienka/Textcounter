@@ -10,16 +10,12 @@ import { connect } from 'react-redux';
 
 function ToolBar(props) {
 
-    function onPopupInit(popupContent) {
-        props.onPopupInit(popupContent)
-    }
-
     return(
         <div className='toolbar'>
             <ToggleTheme />
             <ToolCopy />
             <ToolPaste />
-            <ToolClear onPopupInit={onPopupInit}/>
+            <ToolClear />
             <PopupMessage />
         </div>
     )
