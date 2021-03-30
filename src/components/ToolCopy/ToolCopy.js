@@ -5,11 +5,12 @@ import copyIconDark from '../../images/copy_icon_dark.svg'
 import { showPopupMessage } from '../../js/utilits'
 import ToolButton from '../ToolButton/ToolButton';
 import { popupColors } from '../../js/constants';
+import { connect } from 'react-redux';
 
 function ToolCopy(props) {
 
-    let copyIcon
-    props.theme === 'light' ? copyIcon = copyIconLight : copyIcon = copyIconDark
+    const isTextAreaHasContent = props.text.length === 0 ? false : true
+    const copyIcon = props.theme === 'light' ? copyIconLight : copyIconDark
 
     function copyTextArea(event) {
         const text = document.querySelector('.text__input').value
@@ -21,11 +22,18 @@ function ToolCopy(props) {
         <ToolButton 
             type='copy'
             icon={copyIcon}
-            isActive={props.isActive}
+            isActive={isTextAreaHasContent}
             onClick={copyTextArea}
         />
     )
     
 }
+    
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme,
+        text: state.text.text
+    }
+}
 
-export default ToolCopy;
+export default connect(mapStateToProps)(ToolCopy);

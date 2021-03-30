@@ -1,27 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { themeClassNameGen } from '../../js/utilits/themeClassNameGen';
+import { connect } from 'react-redux';
+import { changeText } from '../../redux/actions';
 import './text.scss'
 
-import { ThemeContext } from '../../contexts/ThemeContext';
-import { themeClassName } from '../../js/utilits/themeClassName';
+class Text extends React.Component {
 
-function Text(props) {
+    constructor(props) {
+        super(props)
 
-    const themeData = React.useContext(ThemeContext);
-    const inputClassName = themeClassName(themeData, 'text__input')
-
-    function sendTextToStatCount() {
-        props.onChangeText(document.querySelector('.text__input').value)
+        this.sendTextToState = this.sendTextToState.bind(this)
     }
-
-    return(
-        <div className='text'>
-            <textarea onChange={sendTextToStatCount}
-                    className={inputClassName} 
-                    type="text" 
-                    placeholder="Ваш текст" />
-        </div>
-    )
+    
+    sendTextToState(event) {
+        this.props.changeText(event.target.value)
+    }
+    
+    render() {
+        const inputClassName = themeClassNameGen(this.props.theme, 'text__input')
+        return(
+            <div className='text'>
+                <textarea onChange={this.sendTextToState}
+                        className={inputClassName} 
+                        type="text" 
+                        placeholder="Ваш текст" 
+                        value={this.props.text} />
+            </div>
+        )
+    }
 }
 
-export default Text;
+const mapStateToProps = state => {
+    return {
+        theme: state.theme.theme,
+        text: state.text.text
+    }
+}
+
+const mapReduceToProps = {
+    changeText: changeText
+}
+
+export default connect(mapStateToProps, mapReduceToProps)(Text);
