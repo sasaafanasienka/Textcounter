@@ -4,8 +4,7 @@ import './header.scss'
 import TextGenerator from '../TextGenerator/TextGenerator';
 import headerLogo from '../../images/logo.svg';
 import headerLogo_dark from '../../images/logo_dark.svg';
-import { themeClassName } from '../../js/utilits/themeClassName';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { themeClassNameGen } from '../../js/utilits/themeClassNameGen';
 import { connect } from 'react-redux';
 

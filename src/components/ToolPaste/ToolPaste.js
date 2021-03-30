@@ -24,7 +24,6 @@ function ToolPaste(props) {
     function pasteInTextArea(event) {
         navigator.clipboard.readText()
             .then(text => {
-                document.querySelector('.text__input').value = text
                 props.changeText(text)
             }).then(() => {
                 if (document.querySelector('.text__input').value.length === 0) {

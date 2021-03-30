@@ -6,22 +6,30 @@ import { connect } from 'react-redux';
 import { changeText } from '../../redux/actions';
 import './text.scss'
 
-function Text(props) {
+class Text extends React.Component {
 
-    const inputClassName = themeClassNameGen(props.theme, 'text__input')
+    constructor(props) {
+        super(props)
 
-    function sendTextToStatCount() {
-        props.changeText(document.querySelector('.text__input').value)
+        this.sendTextToState = this.sendTextToState.bind(this)
     }
-
-    return(
-        <div className='text'>
-            <textarea onChange={sendTextToStatCount}
-                    className={inputClassName} 
-                    type="text" 
-                    placeholder="Ваш текст" />
-        </div>
-    )
+    
+    sendTextToState(event) {
+        this.props.changeText(event.target.value)
+    }
+    
+    render() {
+        const inputClassName = themeClassNameGen(this.props.theme, 'text__input')
+        return(
+            <div className='text'>
+                <textarea onChange={this.sendTextToState}
+                        className={inputClassName} 
+                        type="text" 
+                        placeholder="Ваш текст" 
+                        value={this.props.text} />
+            </div>
+        )
+    }
 }
 
 const mapStateToProps = state => {
