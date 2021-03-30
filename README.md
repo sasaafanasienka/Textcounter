@@ -8,9 +8,10 @@
 * HTML
 * CSS (SCSS, SASS)
 * JavaScript
-* React (в том числе Context, Router)
+* React (в том числе React-Router)
+* Redux
 * Axios
-* Также приложение взаимодействует с localStorage
+* Также приложение сохраняет выбранную тему в localStorage
 
 Как развернуть проект:
 - скопируйте ветку master;
